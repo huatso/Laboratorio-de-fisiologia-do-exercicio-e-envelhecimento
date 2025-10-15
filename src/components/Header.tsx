@@ -12,14 +12,14 @@ function Header() {
     <Navbar expand="lg" className="custom-navbar" sticky="top" variant="dark">
       <Container fluid className="px-4">
         {/* 2. Update Navbar.Brand */}
-        <Navbar.Brand as={Link} to="/">
+        <Navbar.Brand id = "logo" as={Link} to="/">
           <img
             src="/logo.png"
             alt="LAFEE Logo"
             className="d-inline-block align-top logo-img"
           />
         </Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        {/* <Navbar.Toggle aria-controls="basic-navbar-nav" /> */}
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
             {/* 3. Update all Nav.Link components */}
