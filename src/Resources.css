@@ -1,0 +1,7 @@
+/* src/Resources.css */
+
+.custom-list-item:hover {
+  background-color: #fff3e0; /* A very light orange */
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
