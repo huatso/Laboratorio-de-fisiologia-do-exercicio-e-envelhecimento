@@ -1,0 +1,150 @@
+/* Arquivo: src/pages/Publication.css */
+
+:root {
+  --cinza-escuro: #58626C;
+  --azul-principal: #008399;
+  --laranja-destaque: #FFA300;
+  --fundo-claro: #f8f9fa;
+  --borda-suave: #e9ecef;
+}
+
+.publications-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.page-title {
+  color: var(--cinza-escuro);
+  text-align: center;
+  margin-bottom: 3rem;
+  font-weight: 700;
+}
+
+.year-title {
+  color: var(--azul-principal);
+  border-bottom: 2px solid var(--borda-suave);
+  padding-bottom: 0.5rem;
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+}
+
+/* Card individual */
+.publication-card {
+  background-color: #fff;
+  border: 1px solid var(--borda-suave);
+  border-left: 4px solid var(--azul-principal);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.publication-card:hover {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transform: translateY(-3px);
+}
+
+/* --- NOVOS ESTILOS E AJUSTES --- */
+
+/* Remove margem padrão dos parágrafos dentro do card */
+.publication-card p, 
+.publication-card strong {
+  margin: 0;
+}
+
+/* Div que agrupa o rótulo e o conteúdo */
+.publication-field {
+  margin-bottom: 1.1rem; /* Espaço entre "Título", "Autores", "Fonte" */
+  line-height: 1.6;
+}
+/* Remove a margem do último campo */
+.publication-field:last-child {
+  margin-bottom: 0;
+}
+
+/* Estilo do Rótulo (ex: "Título:", "Autores:") */
+.publication-label {
+  display: block;
+  font-weight: 700;
+  font-size: 0.85rem; /* Letra pequena para o rótulo */
+  color: var(--azul-principal); /* Usa a cor de destaque */
+  margin-bottom: 0.25rem;
+  text-transform: uppercase; /* Deixa o rótulo bem distinto */
+}
+
+/* Título (conteúdo) */
+.publication-title {
+  font-weight: 600;
+  color: var(--cinza-escuro);
+  font-size: 1.2rem; /* Título com mais destaque */
+  display: block;
+}
+
+/* Autores (conteúdo) */
+.publication-authors {
+  font-size: 0.9rem; /* Letra menor para a lista de autores */
+  color: #495057;
+  line-height: 1.5; /* Melhora a leitura da lista longa */
+}
+
+/* Fonte e Detalhes (conteúdo) */
+.publication-source-details {
+  font-size: 1rem;
+}
+
+.publication-source {
+  font-style: italic;
+  color: #6c757d;
+}
+
+.publication-source-details a {
+  text-decoration: none;
+  font-weight: 600;
+  color: var(--laranja-destaque);
+  transition: color 0.2s ease;
+}
+
+.publication-source-details a:hover {
+  color: #e69500;
+  text-decoration: underline;
+}
+
+/* --- Estilos de Paginação --- */
+.pagination-controls {
+  display: flex;
+  justify-content: center; /* Alterado de 'space-between' para 'center' */
+  align-items: center;
+  gap: 1.5rem; /* Adiciona um espaço entre os botões */
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--borda-suave);
+}
+
+.pagination-controls span {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--cinza-escuro);
+}
+
+/* Pagination CSS */
+.pagination-controls button {
+  background-color: var(--laranja-destaque);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.25rem;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, opacity 0.3s ease;
+}
+
+.pagination-controls button:hover {
+  background-color: #e69500; /* Laranja mais escuro */
+}
+
+/* Estilo para o botão desabilitado */
+.pagination-controls button:disabled {
+  background-color: #ccc;
+  opacity: 0.6;
+  cursor: not-allowed;
+}

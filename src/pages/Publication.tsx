@@ -1,54 +1,46 @@
-// src/Publication.tsx
+// 1. Importe o 'useState' do React
+import { useState } from 'react'; 
+import './Publication.css'; 
+import * as bibtexParse from 'bibtex-parse-js';
+import { rawBibtex } from '../data/publications.bib';
 
-import React from 'react';
+// --- Lógica de Conversão (Permanece igual) ---
+interface Publication {
+  id: number;
+  year: number;
+  authors: string;
+  title: string;
+  source: string;
+  details: string;
+  link: string;
+}
+const parsedEntries = bibtexParse.toJSON(rawBibtex);
+const publicationsData: Publication[] = parsedEntries.map((entry, index) => {
+  const fields = entry.entryTags;
+  const cleanDoi = fields.doi ? fields.doi.replace('/BIBTEX', '') : '';
+  let details = '';
+  if (fields.volume) details += `Vol. ${fields.volume}`;
+  if (fields.issue) details += `, No. ${fields.issue}`;
+  if (fields.pages) details += `, pp. ${fields.pages}`;
+  details = details.startsWith(', ') ? details.substring(2) : details;
+  return {
+    id: index,
+    year: Number(fields.year) || 0,
+    title: fields.title || 'Título não disponível',
+    authors: fields.author ? fields.author.replace(/ and /gi, ', ') : 'Autores não disponíveis',
+    source: fields.journal || fields.publisher || 'Fonte não disponível',
+    details: details,
+    link: fields.doi ? `https://doi.org/${cleanDoi}` : (fields.url || '#')
+  };
+});
+// --- Fim da Lógica de Conversão ---
 
-// Fictional data for publications. Replace with your own.
-const publicationsData = [
-  {
-    id: 1,
-    year: 2025,
-    type: 'journal',
-    authors: 'Souza, A.; Andrade, C.',
-    title: 'Metabolic adaptations to high-intensity interval training in older adults.',
-    source: 'Journal of Aging and Physical Activity',
-    details: 'Vol. 33, No. 4, pp. 1579-1590, 2025',
-    link: '#', // Replace with the actual link (DOI, etc.)
-  },
-  {
-    id: 2,
-    year: 2025,
-    type: 'conference',
-    authors: 'Ferreira, J.; Martins, L.',
-    title: 'The effect of resistance training on bone mineral density in postmenopausal women.',
-    source: 'Proceedings of the Brazilian Congress of Biomechanics',
-    details: 'OS3-4, p. 35-36, 2025',
-    link: '#',
-  },
-  {
-    id: 3,
-    year: 2024,
-    type: 'journal',
-    authors: 'Andrade, C.; Souza, A.',
-    title: 'Cardiovascular responses to prolonged exercise in a thermoneutral environment.',
-    source: 'Brazilian Journal of Medical and Biological Research',
-    details: 'Vol. 57, No. 2, e13045, 2024',
-    link: '#',
-  },
-  {
-    id: 4,
-    year: 2024,
-    type: 'journal',
-    authors: 'Martins, L.; Ferreira, J.; Souza, A.',
-    title: 'Impact of protein supplementation on muscle hypertrophy.',
-    source: 'Nutrients',
-    details: 'Vol. 16, No. 15, 2340, 2024',
-    link: '#',
-  },
-];
+interface GroupedPublications {
+  [key: number]: Publication[];
+}
 
-// --- Helper function to group publications by year ---
-const groupPublicationsByYear = (data) => {
-  return data.reduce((acc, publication) => {
+const groupPublicationsByYear = (data: Publication[]): GroupedPublications => {
+  return data.reduce((acc: GroupedPublications, publication: Publication) => {
     const year = publication.year;
     if (!acc[year]) {
       acc[year] = [];
@@ -62,55 +54,76 @@ function Publicacoes() {
   const groupedPublications = groupPublicationsByYear(publicationsData);
   const sortedYears = Object.keys(groupedPublications).sort((a, b) => Number(b) - Number(a));
 
+  // --- 2. Lógica de Paginação ---
+  const [currentPage, setCurrentPage] = useState(1);
+  const [yearsPerPage] = useState(1); // Quantos anos você quer mostrar por página
+
+  // Calcula o total de páginas
+  const totalPages = Math.ceil(sortedYears.length / yearsPerPage);
+
+  // Calcula os anos para a página atual
+  const indexOfLastYear = currentPage * yearsPerPage;
+  const indexOfFirstYear = indexOfLastYear - yearsPerPage;
+  const currentYears = sortedYears.slice(indexOfFirstYear, indexOfLastYear);
+
+  // Funções para mudar de página
+  const handleNext = () => {
+    setCurrentPage(prev => Math.min(prev + 1, totalPages)); // Não deixa passar da última
+  };
+  const handlePrev = () => {
+    setCurrentPage(prev => Math.max(prev - 1, 1)); // Não deixa ser menor que 1
+  };
+  // --- Fim da Lógica de Paginação ---
+
   return (
-    <div className="container my-5">
-      <h1 className="text-center mb-5">Publicações</h1>
+    <div className="publications-container">
+      <h1 className="page-title">Publicações</h1>
 
-      {sortedYears.map(year => {
-        const yearPublications = groupedPublications[year];
-        const journalPapers = yearPublications.filter(p => p.type === 'journal');
-        const conferencePapers = yearPublications.filter(p => p.type === 'conference');
+      {/* 3. Mapeia apenas os 'currentYears' em vez de 'sortedYears' */}
+      {currentYears.map(year => (
+        <div key={year} className="mb-5">
+          <h2 className="year-title">{year}</h2>
 
-        return (
-          <div key={year} className="mb-5">
-            <h2 className="border-bottom pb-2 mb-4">{year}</h2>
-
-            {/* Journal Papers Section */}
-            {journalPapers.length > 0 && (
-              <div className="mb-4">
-                <h5 className="fw-bold">Artigos em Periódicos</h5>
-                <ul className="list-unstyled">
-                  {journalPapers.map(pub => (
-                    <li key={pub.id} className="mb-3">
-                      <p className="mb-0">
-                        {pub.authors}. <strong>{pub.title}</strong>. 
-                        <em> {pub.source}</em>, <a href={pub.link} target="_blank" rel="noopener noreferrer">{pub.details}</a>
-                      </p>
-                    </li>
-                  ))}
-                </ul>
+          {groupedPublications[Number(year)].map(pub => (
+            <div key={pub.id} className="publication-card">
+              
+              <div className="publication-field">
+                <span className="publication-label">Título</span>
+                <strong className="publication-title">{pub.title}</strong>
               </div>
-            )}
 
-            {/* Conference Papers Section */}
-            {conferencePapers.length > 0 && (
-              <div>
-                <h5 className="fw-bold">Trabalhos em Congressos</h5>
-                <ul className="list-unstyled">
-                  {conferencePapers.map(pub => (
-                    <li key={pub.id} className="mb-3">
-                      <p className="mb-0">
-                        {pub.authors}. <strong>{pub.title}</strong>. 
-                        <em> {pub.source}</em>, <a href={pub.link} target="_blank" rel="noopener noreferrer">{pub.details}</a>
-                      </p>
-                    </li>
-                  ))}
-                </ul>
+              <div className="publication-field">
+                <span className="publication-label">Autores</span>
+                <p className="publication-authors">{pub.authors}</p>
               </div>
-            )}
-          </div>
-        );
-      })}
+
+              <div className="publication-field">
+                <span className="publication-label">Fonte</span>
+                <p className="publication-source-details">
+                  <em className="publication-source">{pub.source}</em>
+                  {pub.details && `, ${pub.details}`}
+                  . <a href={pub.link} target="_blank" rel="noopener noreferrer">Acessar Artigo</a>
+                </p>
+              </div>
+              
+            </div>
+          ))}
+        </div>
+      ))}
+
+{/* 4. Adiciona os controles de paginação (MODIFICADO) */}
+      <div className="pagination-controls">
+        <button onClick={handlePrev} disabled={currentPage === 1}>
+          &larr; Ano Anterior
+        </button>
+        
+        {/* O texto "Página X de Y" foi removido */}
+        
+        <button onClick={handleNext} disabled={currentPage === totalPages}>
+          Próximo Ano &rarr;
+        </button>
+      </div>
+
     </div>
   );
 }

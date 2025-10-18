@@ -1,7 +1,30 @@
 {
-  "files": [],
-  "references": [
-    { "path": "./tsconfig.app.json" },
-    { "path": "./tsconfig.node.json" }
-  ]
+  "compilerOptions": {
+    /* Caminhos básicos */
+    "baseUrl": "./",
+    "paths": {
+      "@/*": ["src/*"]
+    },
+
+    /* Inclui suas tipagens manuais */
+    "typeRoots": [
+      "./src/types",
+      "./node_modules/@types"
+    ],
+
+    /* Modo de módulo e compatibilidade */
+    "moduleResolution": "node",
+    "module": "esnext",
+    "target": "esnext",
+    "jsx": "react-jsx",
+
+    /* Regras de segurança e boas práticas */
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
+  },
+
+  /* Inclui todos os arquivos TypeScript da pasta src */
+  "include": ["src"],
 }

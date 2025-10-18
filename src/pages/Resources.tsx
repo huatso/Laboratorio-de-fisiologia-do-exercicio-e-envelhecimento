@@ -1,61 +1,58 @@
-// src/Resources.tsx
-
 import React from 'react';
+import './Resources.css'; // Importe o novo CSS
 
 // Fictional data for the resource files.
-// Replace these with your actual file details and Google Drive links.
+// Substitua pelas suas informações e links do Google Drive.
 const resourceFiles = [
   {
     id: 1,
     title: 'Artigo sobre Fisiologia do Esforço.pdf',
     description: 'Publicação de 2024 sobre as adaptações cardiovasculares.',
-    downloadUrl: 'YOUR_GOOGLE_DRIVE_LINK_HERE_1', // Paste your link here
+    downloadUrl: '#', // Cole seu link aqui
   },
   {
     id: 2,
     title: 'Planilha de Coleta de Dados.xlsx',
     description: 'Modelo de planilha para coleta de dados de VO2 máximo.',
-    downloadUrl: 'YOUR_GOOGLE_DRIVE_LINK_HERE_2', // Paste your link here
+    downloadUrl: '#', // Cole seu link aqui
   },
   {
     id: 3,
     title: 'Apresentação sobre Biomecânica.pptx',
     description: 'Slides da apresentação do último congresso da equipe.',
-    downloadUrl: 'YOUR_GOOGLE_DRIVE_LINK_HERE_3', // Paste your link here
-  },
-  {
-    id: 4,
-    title: 'Software de Análise Estatística.zip',
-    description: 'Pacote com scripts e software para análise estatística em R.',
-    downloadUrl: 'YOUR_GOOGLE_DRIVE_LINK_HERE_4', // Paste your link here
+    downloadUrl: '#', // Cole seu link aqui
   },
 ];
 
 function Resources() {
   return (
-    <div className="container my-5">
-      <h1 className="text-center mb-5">Recursos e Downloads</h1>
+    // O container principal é o <main className="main-content"> do seu AppLayout
+    <div>
+      <h1 className="page-title">Recursos e Downloads</h1>
       
-      <div className="list-group">
+      <div className="resource-list">
         {resourceFiles.map((file) => (
-          <div key={file.id} className="list-group-item d-flex justify-content-between align-items-center">
-            {/* File Info Section */}
-            <div>
-              <h5 className="mb-1">
-                <i className="bi bi-file-earmark-text me-2"></i> {/* File Icon */}
+          <div key={file.id} className="resource-card">
+            
+            {/* Seção de Informações do Arquivo */}
+            <div className="resource-info">
+              <h5 className="resource-title">
+                {/* Ícone do Arquivo */}
+                <i className="bi bi-file-earmark-text resource-icon"></i>
                 {file.title}
               </h5>
-              <p className="mb-1">{file.description}</p>
+              <p className="resource-description">{file.description}</p>
             </div>
 
-            {/* Download Button Section */}
+            {/* Seção do Botão de Download */}
             <a 
               href={file.downloadUrl} 
-              target="_blank" // Opens the link in a new tab
-              rel="noopener noreferrer" // Security best practice
-              className="btn btn-success"
+              target="_blank" // Abre em nova aba
+              rel="noopener noreferrer" 
+              className="resource-download-btn"
             >
-              <i className="bi bi-download me-2"></i> {/* Download Icon */}
+              {/* Ícone de Download */}
+              <i className="bi bi-download download-icon"></i>
               Baixar
             </a>
           </div>

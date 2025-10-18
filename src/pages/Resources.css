@@ -1,7 +1,91 @@
-/* src/Resources.css */
+/* Arquivo: src/pages/Resources.css */
 
-.custom-list-item:hover {
-  background-color: #fff3e0; /* A very light orange */
-  cursor: pointer;
-  transition: background-color 0.2s ease-in-out;
+/* Título da Página */
+.page-title {
+  color: var(--cinza-escuro, #58626C);
+  text-align: center;
+  margin-bottom: 3rem;
+  font-weight: 700;
+}
+
+/* Card individual para cada recurso */
+.resource-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* Para telas pequenas */
+  
+  background-color: #fff;
+  border: 1px solid var(--borda-suave, #e9ecef);
+  border-left: 4px solid var(--azul-principal, #008399);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1.25rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.3s ease;
+}
+
+.resource-card:hover {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.resource-info {
+  flex: 1; /* Ocupa o espaço disponível */
+  margin-right: 1.5rem;
+}
+
+.resource-title {
+  font-weight: 600;
+  color: var(--cinza-escuro, #58626C);
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.resource-icon {
+  font-size: 1.2rem;
+  margin-right: 0.75rem;
+  color: var(--azul-principal, #008399);
+}
+
+.resource-description {
+  font-size: 0.95rem;
+  color: #6c757d;
+  margin: 0;
+}
+
+/* Botão de Download (Laranja) */
+.resource-download-btn {
+  background-color: var(--laranja-destaque, #FFA300);
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+
+.resource-download-btn:hover {
+  background-color: #e69500; /* Laranja mais escuro */
+  color: white;
+}
+
+.download-icon {
+  margin-right: 0.5rem;
+}
+
+/* Responsividade para o card */
+@media (max-width: 768px) {
+  .resource-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .resource-info {
+    margin-right: 0;
+    margin-bottom: 1.5rem;
+  }
 }

@@ -13,6 +13,7 @@ import Research from './pages/Research.tsx';
 import Members from './pages/Members.tsx';
 import Publication from './pages/Publication.tsx';
 import Resources from './pages/Resources.tsx';
+import Footer from './components/Footer.tsx';
 
 import './index.css';
 
@@ -26,7 +27,7 @@ const AppLayout = () => {
         {/* As páginas (Home, About, etc.) serão renderizadas aqui dentro */}
         <Outlet />
       </main>
-      {/* Adicionar Footer */}
+      <Footer />
     </div>
   );
 };

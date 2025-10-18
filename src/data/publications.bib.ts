@@ -1,0 +1,83 @@
+// src/data/publications.bib.ts
+
+// Exportamos uma única string (delimitada por `) com todo o BibTeX
+export const rawBibtex = `
+@article{Evangelista2024,
+   abstract = {The present research aimed to analyse the effect of HIIT with body weight on strength and functional capacity parameters in older adults. Sixty sedentary older people were randomised into the control group (n=30) and the training group (n=30), who performed the bodyweight interval training program. The training consisted of 3 weekly sessions of 30 minutes in duration, performed on alternate days, consisting of warm-up, central part, and cool-down. The main part of the training session was 20 minutes long, totalling 20 work cycles. Each work cycle comprised 30 seconds of stimulation and 30 seconds of passive recovery. To verify the functional variables of older adults, the 5-time sit-and-stand test, the 10m walk test, the Timed Up and Go (TUG), and the 1RM test were used to determine maximum muscular strength. The results showed significant differences (p<0.05) for the TUG (p=0.0001), 5TSTS test (p=0.009), and maximum reproduction for elbow flexion 1RMEF (p=0.05) for the group Training. High-intensity interval training with body weight improves the functionality mainly of the lower limbs, impacting the performance of instrumental activities of daily living and gait performance, generating autonomy and independence of movement.},
+   author = {Gabriela Vitória Gonçalves Evangelista and Fabiana Scartoni and Felício Savioli Neto and Lara Cristina Brandão Consolo Zucareli and André José Aguilar and Alexandre Machado and Danilo S. Bocalini and Francisco Luciano Pontes},
+   doi = {10.6063/MOTRICIDADE.35011},
+   issn = {2182-2972},
+   issue = {4},
+   journal = {Motricidade},
+   keywords = {Aging,Functional fitness,Older adults,bodyweight,interval training},
+   month = {12},
+   pages = {329-336},
+   publisher = {Universidade da Beira Interior},
+   title = {High-intensity bodyweight interval training increases strength and functional capacity in older adults},
+   volume = {20},
+   url = {https://revistas.rcaap.pt/motricidade/article/view/35011},
+   year = {2024}
+}
+@article{Pontes2024,
+   abstract = {A síndrome metabólica é maior na população idosa, sendo responsável por um aumento de 2,5 vezes o risco para doenças cardiovasculares e de cinco vezes para o desenvolvimento de diabetes mellitus. O uso de métodos antropométricos para determinar a saúde e doença sempre foi uma preocupação entre pesquisadores, porque são de baixo custo, não invasivos e de fácil aplicação clínica. Desta forma, este estudo teve como objetivo determinar o somatotipo predominante em idosos com síndrome metabólica (SM). A amostra foi composta por idosos com 60 idosos ou mais que foram divididos em dois grupos: Grupo controle (n=29) e grupo SM (31). Para determinar a SM foi utilizado o critério da CEP-ATP III (National Cholesterol Education Program Adult Treatment Panel III) e o somatotipo foi obtido usando o método de Heath e Carter. A análise do somatotipo demonstrou que a endomorfia foi o somatotipo predominante em idosos com SM (SM= 8,4 ± 1,1 vs GC= 5,75 ± 1,88 p ≤ 0,01) seguido da mesomorfia (SM= 5,85 ± 1,34 vs GC= 4,39 ± 1,39 p ≤ 0,01) e ectomorfia (SM= 0,17 ± 0,21 vs GC= 0,82 ± 0,78 p ≤0,01) quando comparado com o grupo controle. A endomorfia foi o somatótipo de Gordura corporal predominante em idosos com SM, seguido por mesomorfia e Ectomorfia. Além disso, é um método de baixo custo e de fácil aplicação clínica.},
+   author = {Lucas Mutarelli Pontes and Leandro Brasil Rego and Lucas Marques Vieira and Rodrigo Chaves da Silva and Danilo Sales Bocalini and Clarcson Plácido Conceição dos Santos and Felício Savioli Neto and Francisco Luciano Pontes Júnior},
+   doi = {10.55905/REVCONV.17N.13-502},
+   issn = {1988-7833},
+   issue = {13},
+   journal = {CONTRIBUCIONES A LAS CIENCIAS SOCIALES},
+   keywords = {envelhecimento,idoso,somatotipo,síndrome metabólica},
+   month = {12},
+   pages = {e14105-e14105},
+   publisher = {Brazilian Journals},
+   title = {Determinação do somatotipo em idosos brasileiros com síndrome metabólica},
+   volume = {17},
+   url = {https://ojs.revistacontribuciones.com/ojs/index.php/clcs/article/view/14105},
+   year = {2024}
+}
+@article{Siqueira2024,
+   abstract = {Introduction: The literature does not explore functional assessments carried out remotely and in older women in virtual environments. Objective: This study analyzed the reproducibility and agreement in applying functional autonomy tests face to face (FF) and virtually (V). Methods: A single evaluator carried out two evaluations. The following tests were performed: walking 10 m, rising from the sitting position (RSP), rising from the ventral decubitus position (RVDP), and sitting and rising from a chair and walking around the house (SRCW). Results: No significant changes were identified between V and FF (p > 0.05 for all). No significant changes were identified between tests considering FF and V conditions (p > 0.05 for all). The highest value for the intraclass correlation coefficient was <0.0001 for the SRCW (CL, r = 0.98 CI95%: 0.969–0.990 and ICC, r = 0.99 CI95%: 0.984–0.995), and the lowest was <0.0001 for the RSP (CL, r = 0.91 CI95%: 0.853–0.954 and ICC, r = 0.95 CI95%: 0.921–0.976). Regarding agreement between tests, a variation was found between the lowest value of 0.07 ± 0.74 BIAS for the RVDP and the highest value of 0.32 ± 1.89 BIAS for the SRCW. Conclusion: The tests used in the present study showed good reproducibility and agreement in older people when carried out face to face and virtually.},
+   author = {Talles M. Siqueira and Rafael M. Pitta and Alexandre F. Machado and Fabiana R. Scartoni and Roberta L. Rica and Francisco Luciano Pontes Junior and Valentina Bullo and Stefano Gobbo and Marco Bergamin and Danilo S. Bocalini},
+   doi = {10.3389/FPUBH.2024.1445039/BIBTEX},
+   issn = {22962565},
+   journal = {Frontiers in Public Health},
+   keywords = {aged,daily living activity,longevity,older adults,older people},
+   month = {1},
+   pages = {1445039},
+   pmid = {39926289},
+   publisher = {Frontiers Media SA},
+   title = {Reproducibility and concordance of functional autonomy tests in older adult women: a comparative study of face-to-face and virtual assessments},
+   volume = {12},
+   year = {2024}
+}
+@article{daSilveira2025,
+   abstract = {The purpose of the study was to quantify and compare the volume of training performed by competitive physique athletes, obtaining unprecedented findings at this level of specificity given the scarce specific literature and comparing with guidelines, in order to generate more specific and accurate conducts in the future. Methods: One hundred and fifty-four athletes from different federations and categories were analyzed using questions with items about training strategies describing them and subsequently comparing them with each other and with guidelines. Results: Many of the categories reduced training volume in pré-contest for most muscle groups. There is a variation in the average number of workouts per week between the off-season and the pré-contest period in different muscle groups. There was a significant difference in the weekly sets volume in categories (p < 0.05, α = 0,05): Men's Physique (MP) reduced (pectoral); Classic Physique (CP) and MP reduced (deltoids); Bodybuilding Classic (BC) vs. MP (pectoral) off-season and BC vs. MP (deltoids) off-season; Master (MT) increased (quadriceps); BC and MT increased (abdominals); CP vs. MP pré-contest (triceps surae). There was a significant increase in the duration of cardio work in pré-contest: CP, BC, Bikini (BK), and Wellness (WL) (p < 0.05, α = 0,05). An increase was observed as statistically significant in the weekly frequency of BC and Senior (SN) (p < 0.05). In most cases, there was an increase in the amount of cardio work during the pré-contest period. Conclusion: Notable reductions in training volume were observed during the pré-contest period for some muscle groups. Both men and women exhibited a decrease in exercise frequency for some muscle groups during pré-contest, alongside an increase in cardio training. We suggest new studies that can help with developing more detailed training practices for physique athletes.},
+   author = {Thiago Beraldo da Silveira and Gustavo Paula Leite de Almeida and Nelson Carvas Junior and Alexandre Fernandes Machado and Roberta Luksevicius Rica and Francisco Luciano Pontes and Fabiana Rodrigues Scartoni and Valentina Bullo and Stefano Gobbo and Marco Bergamin and Danilo S. Bocalini and Aylton Figueira Júnior and Gustavo Allegretti João},
+   doi = {10.3389/FSPOR.2025.1536360/BIBTEX},
+   issn = {26249367},
+   journal = {Frontiers in Sports and Active Living},
+   keywords = {bodybuilding training,competitive bodybuilders,physique athletes training,resistance training,strength training,volume training},
+   month = {7},
+   pages = {1536360},
+   publisher = {Frontiers Media SA},
+   title = {Quantification of weekly strength-training volume per muscle group in competitive physique athletes},
+   volume = {7},
+   url = {https://linktr.ee/pesquisausjt},
+   year = {2025}
+}
+@article{Rego2025,
+   abstract = {O envelhecimento está associado ao declínio nos sistemas cardiorrespiratório e musculoesquelético, fato que pode comprometer a capacidade funcional do idoso. Objetivo: verificar a associação entre força muscular isométrica, VO2 pico e capacidade funcional em mulheres idosas. Métodos: Nossa amostra consistiu de 30 mulheres idosas, com idade de 65,4 (± 2,8) anos. Para determinar o VO2 pico, foi realizado um teste ergoespirométrico em esteira. A força isométrica foi avaliada usando um dinamômetro portátil “Hand Held Dynamometer”. A capacidade funcional foi verificada por meio dos testes: TUG (Timed Up and Go), TVM 10m (teste de velocidade de caminhada de 10 metros) e TSLC (teste de sentar e levantar da cadeira). Resultados: Os seguintes valores foram mostrados nas correlações: VO2 pico ml.kg.min-1 vs. força isométrica de membros inferiores (r= 0,62; p= < 0,001); VO2 pico ml.kg.min-1 vs. TUG (r = -0,63; p= < 0,001); VO2 pico ml.kg.min-1 vs. TVM-10m (r = -0,49 p = 0,005); VO2 pico ml. kg. min-1 vs. TSLC (r= - 0,52 p= 0,003); força de membros inferiores vs. TUG (r= -0,50; p=0,005); força de membros inferiores vs. TVM-10m (r= -0,50; p= 0,005); força de membros inferiores vs. TSLC (r= -0,48; p=0,006). A regressão linear múltipla mostrou um R2 de 49,8% para a variável dependente VO2 pico e os seguintes valores: força isométrica de membro inferior (B= 0,25; p=0,012) e o teste TUG (B= -2,161; p= 0,008). Conclusão: Os níveis de força muscular dos membros inferiores estão associados ao VO2 pico e à capacidade funcional de mulheres idosas.},
+   author = {Leandro Brasil Rego and Rodrigo Villar and Danilo Sales Bocalini and Bruna Trindade Bueno and Ruth Caldeira de Melo and Felício Savioli Neto and Ana Paula Souza Lima and Francisco Luciano Pontes Júnior},
+   doi = {10.54033/CADPEDV22N10-041},
+   issn = {1983-0882},
+   issue = {10},
+   journal = {Caderno Pedagógico},
+   keywords = {Capacidade Funcional,Força Muscular Isométrica,Mulheres Idosas,Volume de Oxigênio Pico},
+   month = {8},
+   pages = {e18853-e18853},
+   publisher = {Brazilian Journals},
+   title = {A força muscular isométrica está associada ao VO2 pico e à capacidade funcional em mulheres idosas},
+   volume = {22},
+   url = {https://ojs.studiespublicacoes.com.br/ojs/index.php/cadped/article/view/18853},
+   year = {2025}
+}
+`;

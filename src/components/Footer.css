@@ -1,0 +1,50 @@
+/* Assume que as variáveis de cor estão em :root no index.css ou similar */
+/* Adiciona fallbacks para o caso de não estarem */
+.footer-container {
+  background-color: var(--cinza-escuro, #58626C);
+  color: #f0f0f0; /* Um cinza bem claro, mais suave que branco puro */
+  padding: 2.5rem 2rem;
+  margin-top: 4rem; /* Empurra o rodapé para baixo do conteúdo */
+  
+  /* Adiciona uma borda sutil no topo com a cor laranja */
+  border-top: 4px solid var(--laranja-destaque, #FFA300);
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap; /* Permite quebrar a linha em telas pequenas */
+}
+
+.footer-logo {
+  height: 50px; /* Ajuste o tamanho conforme necessário */
+  width: auto;
+  opacity: 0.9;
+}
+
+.footer-text {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  text-align: center;
+}
+
+/* Remove a margem padrão dos parágrafos */
+.footer-text p {
+  margin: 0.25rem 0; 
+}
+
+/* Em telas pequenas, empilha o logo e o texto */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .footer-text {
+    text-align: center;
+  }
+}
