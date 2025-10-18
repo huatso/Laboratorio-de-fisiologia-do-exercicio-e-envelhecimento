@@ -1,52 +1,134 @@
-/* src/components/Header.css */
-
-#logo{
-  display:inline-block;
-  padding-left: 2rem;
+/* Definição das variáveis de cor com base na sua paleta */
+:root {
+  --cinza-escuro: #58626C;
+  --azul-principal: #008399;
+  --laranja-destaque: #FFA300;
+  --branco: #FFFFFF;
+  --sombra-suave: rgba(0, 0, 0, 0.1);
 }
 
-/* make container align children horizontally: logo left, nav right */
-.custom-navbar .container-fluid{
-  display:flex;
-  align-items:center;
+/* Container principal do cabeçalho */
+.header-container {
+  background-color: var(--branco);
+  padding: 1rem 5%; /* Mantém um padding nas laterais */
+  box-shadow: 0 2px 4px var(--sombra-suave);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-#basic-navbar-nav{
-  display:flex;
-  align-items:center;
-  margin-left: auto; /* pushes the nav to the right */
-  padding-right: 1rem;
+.header-content {
+  display: flex;
+  justify-content: space-between; /* Mantém espaço entre logo e nav */
+  align-items: center;
+  /*max-width: 1200px; /* Limita a largura do conteúdo interno */
+  /*margin: 0 auto; /* Centraliza o conteúdo */
 }
 
-.custom-navbar {
-  background-color: #FFA500; 
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
-}
-
-/* vertically center logo and nav links inside the navbar */
-.custom-navbar .container-fluid{
+/* Estilo do Logo */
+.logo-link {
   display: flex;
   align-items: center;
+  /* Adiciona uma margem à direita para afastar um pouco do menu, se necessário */
+  margin-right: 2rem; 
 }
 
-.logo-img {
-  height: 73px; 
+.logo-image {
+  height: 80px; /* Aumentado de 50px para 65px - você pode ajustar este valor */
   width: auto;
+  /* Remove qualquer margem extra que possa estar empurrando */
+  margin-left: 0; 
 }
 
-.custom-navbar .nav-link {
-  color: white !important; 
-  font-weight: 500;
-  font-size: 1.1rem;
-  margin-left: 1rem;
-  margin-right: 1rem;
-  transition: color 0.2s ease-in-out;
-  padding-top: 0.2rem; 
-  padding-bottom: 0.2rem;
+/* Estilo da Navegação (Desktop) */
+.nav-desktop ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem; /* Espaçamento entre os links */
+  margin: 0;
+  padding: 0;
 }
 
-.custom-navbar .nav-link:hover {
-  color: #f0f0f0 !important;
+.nav-desktop a {
+  text-decoration: none;
+  color: var(--cinza-escuro);
+  font-weight: 600;
+  font-size: 1.2rem;
+  padding-bottom: 5px;
+  position: relative;
+  transition: color 0.3s ease;
 }
+
+/* Efeito de hover com a cor laranja */
+.nav-desktop a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--laranja-destaque);
+  transition: width 0.3s ease;
+}
+
+.nav-desktop a:hover {
+  color: var(--azul-principal);
+}
+
+.nav-desktop a:hover::after {
+  width: 100%;
+}
+
+/* Botão do Menu Mobile (Hambúrguer) */
+.menu-toggle {
+  display: none; /* Escondido por padrão em telas grandes */
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: var(--cinza-escuro);
+  cursor: pointer;
+}
+
+/* Navegação Mobile */
+.nav-mobile {
+  display: none;
+}
+
+/* Media Query para Responsividade (telas menores que 768px) */
+@media (max-width: 768px) {
+  .nav-desktop {
+    display: none; /* Esconde a navegação de desktop */
+  }
+
+  .menu-toggle {
+    display: block; /* Mostra o botão de hambúrguer */
+  }
+
+  .nav-mobile {
+    display: block;
+    width: 100%;
+    background-color: #f9f9f9;
+    padding: 1rem 0;
+  }
+  
+  .nav-mobile ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .nav-mobile a {
+    text-decoration: none;
+    color: var(--cinza-escuro);
+    font-weight: 600;
+    font-size: 1.2rem;
+  }
+}
+
+
