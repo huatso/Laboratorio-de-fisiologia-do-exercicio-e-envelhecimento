@@ -1,105 +1,118 @@
-// src/Equipe.tsx
+import React, { useState } from 'react';
+import "./Members.css";
 
-import React from 'react';
+import { Modal, Container, Row, Col, Button, Card } from 'react-bootstrap';
+import MembersData, { Member } from "../data/Members"; 
 
-// Fictional data for the lab members
-const labMembers = [
-  {
-    id: 1,
-    name: 'Dra. Ana Souza',
-    role: 'Coordenadora / Professora Doutora',
-    description: 'Líder do Laboratório de Fisiologia do Exercício, com foco em adaptações metabólicas ao treinamento de endurance.',
-    imageUrl: 'https://i.pravatar.cc/300?img=56', // Placeholder image
-    isCoordinator: true,
-  },
-  {
-    id: 2,
-    name: 'Carlos Andrade',
-    role: 'Doutorando',
-    description: 'Pesquisando o efeito da hipóxia no desempenho de atletas de elite.',
-    imageUrl: 'https://i.pravatar.cc/300?img=68', // Placeholder image
-    isCoordinator: false,
-  },
-  {
-    id: 3,
-    name: 'Juliana Ferreira',
-    role: 'Mestranda',
-    description: 'Estudando a resposta hormonal em treinos de força para a terceira idade.',
-    imageUrl: 'https://i.pravatar.cc/300?img=32', // Placeholder image
-    isCoordinator: false,
-  },
-  {
-    id: 4,
-    name: 'Lucas Martins',
-    role: 'Iniciação Científica',
-    description: 'Analisando dados de variabilidade da frequência cardíaca em ciclistas.',
-    imageUrl: 'https://i.pravatar.cc/300?img=14', // Placeholder image
-    isCoordinator: false,
-  },
-];
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-// Separate the coordinator from the rest of the members
-const coordinator = labMembers.find(member => member.isCoordinator);
-const otherMembers = labMembers.filter(member => !member.isCoordinator);
-
-function Equipe() {
-  return (
-    <div className="container my-5">
-      {/* Page Title */}
-      <h1 className="text-center mb-5">Nossa Equipe</h1>
-
-      {/* Coordinator Section (Emphasis) 👨‍🏫 */}
-      {coordinator && (
-        <div className="row justify-content-center mb-5">
-          <div className="col-md-10">
-            <div className="card shadow-sm p-3">
-              <div className="row g-0 align-items-center">
-                <div className="col-md-4 text-center">
-                  <img 
-                    src={coordinator.imageUrl} 
-                    className="img-fluid rounded-circle" 
-                    alt={coordinator.name} 
-                    style={{ maxWidth: '200px', border: '5px solid #FFA500' }} 
-                  />
-                </div>
-                <div className="col-md-8">
-                  <div className="card-body">
-                    <h2 className="card-title">{coordinator.name}</h2>
-                    <h5 className="card-subtitle mb-2 text-muted">{coordinator.role}</h5>
-                    <p className="card-text">{coordinator.description}</p>
-                    <a href="#" className="btn btn-outline-primary">Ver Publicações</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
-
-      <hr className="my-5" />
-
-      {/* Other Members Section 🧑‍🔬 */}
-      <div className="row">
-        {otherMembers.map((member) => (
-          <div key={member.id} className="col-lg-4 col-md-6 mb-4 d-flex align-items-stretch">
-            <div className="card text-center w-100 member-card shadow-sm">
-              <img 
-                src={member.imageUrl} 
-                className="card-img-top p-4 rounded-circle" 
-                alt={member.name}
-                style={{ width: '180px', height: '180px', objectFit: 'cover', margin: '0 auto' }}
-              />
-              <div className="card-body">
-                <h5 className="card-title">{member.name}</h5>
-                <h6 className="card-subtitle mb-2 text-muted">{member.role}</h6>
-                <p className="card-text">{member.description}</p>
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
+interface ModalProps {
+    member: Member | null;
+    show: boolean;
+    handleClose: () => void;
 }
 
-export default Equipe;
+function MemberDetailModal({ member, show, handleClose }: ModalProps) {
+    if (!member) return null; 
+
+    return (
+        <Modal show={show} onHide={handleClose} size="lg" centered>
+            <Modal.Header closeButton>
+                <Modal.Title className="fw-bold">Perfil Completo</Modal.Title>
+            </Modal.Header>
+            <Modal.Body className="p-4">
+                <Row>
+                    <Col 
+                        md={4} 
+                        // CORREÇÃO: Adicionado justify-content-center para centralização vertical
+                        className="d-flex flex-column align-items-center justify-content-center border-end text-center"
+                    >
+                        <img 
+                            src={member.ImageUrl} 
+                            alt={`Foto de ${member.Name}`} 
+                            style={{width: '150px', height: '150px', objectFit: 'cover'}} 
+                            className="rounded-circle mb-3 shadow"
+                        />
+                        <h5 className="fw-bold mt-2">{member.Name}</h5>
+                        <p className="text-muted small mb-0">{member.SubTitle}</p>
+                        <p className="text-muted small">{member.Location}</p>
+                    </Col>
+                    
+                    <Col md={8} className="ps-4">
+                        <h4 className="mb-3 text-dark fw-bold">Biografia</h4>
+                        <p className="text-justify" style={{ whiteSpace: 'pre-wrap', maxHeight: '300px', overflowY: 'auto' }}>
+                            {member.Bio}
+                        </p>
+                        <hr className="my-3"/>
+                        <h6 className="fw-bold">Contato</h6>
+                        <p className="small mb-0">Email/Link: <a href={`mailto:${member.ContactLinks}`}>{member.ContactLinks}</a></p>
+                    </Col>
+                </Row>
+            </Modal.Body>
+            <Modal.Footer>
+                <Button variant="secondary" onClick={handleClose}>
+                    Fechar Perfil
+                </Button>
+            </Modal.Footer>
+        </Modal>
+    );
+}
+interface CardProps {
+    member: Member;
+    HandleClick: () => void;
+}
+
+function MemberCard({ member, HandleClick }: CardProps) {
+    return (
+        <Col md={6} lg={4} className="mb-4">
+            <Card style={{ width: '100%' }}> 
+                <Card.Img variant="top" src={member.ImageUrl ?? ''} className="Profile"/>
+                <Card.Body className="d-grid justify-items-center">
+                    <Card.Title className="fw-bold text-center">{member.Name}</Card.Title>
+                    <Card.Subtitle className="mb-2 text-muted text-center">{member.SubTitle}</Card.Subtitle>
+                    <Card.Text className="teaser-text">{member.Teaser}</Card.Text>
+                    <Button onClick={HandleClick} variant="primary">Leia Mais</Button>
+                </Card.Body>
+            </Card>
+        </Col>
+    );
+}
+
+function Members() {
+    const [showModal, setShowModal] = useState(false);
+    const [selectedMember, setSelectedMember] = useState<Member | null>(null);
+
+    const handleCardClick = (member: Member) => {
+        setSelectedMember(member);
+        setShowModal(true);
+    };
+
+    const handleCloseModal = () => {
+        setShowModal(false);
+        setSelectedMember(null); 
+    };
+
+    return (
+        <Container className="my-5">
+            <h1 className="text-center mb-4">Nossa Equipe</h1>
+            
+            <Row className="justify-content-center"> 
+                {MembersData.map(member => (
+                    <MemberCard 
+                        key={member.Id} 
+                        member={member} 
+                        HandleClick={() => handleCardClick(member)} 
+                    />
+                ))}
+            </Row>
+            
+            <MemberDetailModal 
+                member={selectedMember} 
+                show={showModal} 
+                handleClose={handleCloseModal}
+            />
+        </Container>
+    );
+}
+
+export default Members;

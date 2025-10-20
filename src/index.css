@@ -1,3 +1,9 @@
+.app-container {
+  min-height: 100vh; 
+  display: flex;
+  flex-direction: column; 
+}
+
 /* Reset Básico para remover margens e paddings padrão do navegador */
 body, h1, h2, h3, h4, h5, h6, p, ul, ol, li, figure, figcaption, blockquote, dl, dd {
   margin: 0;
@@ -40,7 +46,9 @@ body {
   margin: 0 auto;    /* Centraliza o container na página */
   padding: 2rem 1.5rem; /* Adiciona espaçamento: 2rem em cima/baixo, 1.5rem nos lados */
   box-sizing: border-box;
+  flex-grow: 1;
 }
+
 
 /* Em telas menores, remove a largura máxima para usar todo o espaço */
 @media (max-width: 1200px) {

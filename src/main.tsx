@@ -4,16 +4,18 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom';
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 // Caminhos para o Header
-import Header from './components/Header.tsx'; 
-import Home from './pages/Home.tsx';
-import About from './pages/About.tsx';
-import Research from './pages/Research.tsx';
-import Members from './pages/Members.tsx';
-import Publication from './pages/Publication.tsx';
-import Resources from './pages/Resources.tsx';
-import Footer from './components/Footer.tsx';
+import Header from './components/Header'; 
+import Home from './pages/Home';
+import About from './pages/About';
+import Research from './pages/Research';
+import Members from './pages/Members';
+import Publication from './pages/Publication';
+import Resources from './pages/Resources';
+import Footer from './components/Footer';
 
 import './index.css';
 
@@ -27,7 +29,7 @@ const AppLayout = () => {
         {/* As páginas (Home, About, etc.) serão renderizadas aqui dentro */}
         <Outlet />
       </main>
-      <Footer />
+      <Footer/>
     </div>
   );
 };
@@ -41,7 +43,7 @@ const router = createBrowserRouter([
       { path: '/', element: <Home /> },
       { path: '/about', element: <About /> },
       { path: '/research', element: <Research /> },
-      { path: '/members', element: <Members /> },
+      { path: '/members', element: <Members/> },
       { path: '/publication', element: <Publication /> },
       { path: '/resources', element: <Resources /> },
     ],
