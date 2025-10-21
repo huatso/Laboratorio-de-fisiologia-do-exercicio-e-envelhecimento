@@ -1,50 +1,41 @@
-/* Assume que as variáveis de cor estão em :root no index.css ou similar */
-/* Adiciona fallbacks para o caso de não estarem */
+/* Arquivo: src/components/Footer/Footer.css */
+
 .footer-container {
-  background-color: var(--cinza-escuro, #58626C);
-  color: #f0f0f0; /* Um cinza bem claro, mais suave que branco puro */
-  padding: 2.5rem 2rem;
-  margin-top: 4rem; /* Empurra o rodapé para baixo do conteúdo */
+  background-color: var(--azul-principal, #008399);
+  color: #f0f0f0; 
   
-  /* Adiciona uma borda sutil no topo com a cor laranja */
+  /* PADDING REDUZIDO: Deixando o rodapé mais "fino" */
+  padding: 1.5rem 2rem; 
+  
   border-top: 4px solid var(--laranja-destaque, #FFA300);
 }
 
 .footer-content {
   max-width: 1200px;
   margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 2rem;
-  flex-wrap: wrap; /* Permite quebrar a linha em telas pequenas */
-}
-
-.footer-logo {
-  height: 50px; /* Ajuste o tamanho conforme necessário */
-  width: auto;
-  opacity: 0.9;
+  
+  /* REMOVIDO: display: flex e gap, pois não há mais logo */
+  /* O texto será centralizado pela regra abaixo */
 }
 
 .footer-text {
-  font-size: 0.9rem;
+  font-size: 0.85rem; /* Fonte um pouco menor para um visual mais fino */
   line-height: 1.6;
   text-align: center;
 }
 
-/* Remove a margem padrão dos parágrafos */
 .footer-text p {
   margin: 0.25rem 0; 
 }
 
-/* Em telas pequenas, empilha o logo e o texto */
+/* O media query para mobile não é mais necessário, 
+   pois o layout já é de coluna única (só texto). 
+   Você pode remover o @media (max-width: 768px) {...} 
+   se quiser limpar o arquivo. 
+*/
 @media (max-width: 768px) {
-  .footer-content {
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-  
   .footer-text {
-    text-align: center;
+    /* Garante que o texto já esteja centralizado */
+    text-align: center; 
   }
 }

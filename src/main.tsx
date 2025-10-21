@@ -23,14 +23,15 @@ import './index.css';
 // Componente de Layout (a "casca" do site)
 const AppLayout = () => {
   return (
-    <div>
+    // 1. Mude o <div className="app-layout"> para um fragmento <>
+    <>
       <Header />
       <main className="main-content">
-        {/* As páginas (Home, About, etc.) serão renderizadas aqui dentro */}
         <Outlet />
       </main>
-      <Footer/>
-    </div>
+      <Footer />
+    </>
+    // 2. Feche o fragmento </>
   );
 };
 
@@ -38,12 +39,13 @@ const AppLayout = () => {
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <AppLayout />, // O layout principal é o elemento raiz
+    element: <AppLayout />,
     children: [
-      { path: '/', element: <Home /> },
-      { path: '/about', element: <About /> },
+      // A rota '/' agora carrega 'About'
+      { path: '/', element: <About /> }, 
+      { path: '/about', element: <About /> }, // 'about' também carrega 'About'
+      { path: '/members', element: <Members /> }, // Mudando para a nova ordem
       { path: '/research', element: <Research /> },
-      { path: '/members', element: <Members/> },
       { path: '/publication', element: <Publication /> },
       { path: '/resources', element: <Resources /> },
     ],

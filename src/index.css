@@ -1,56 +1,47 @@
-.app-container {
-  min-height: 100vh; 
-  display: flex;
-  flex-direction: column; 
-}
-
-/* Reset Básico para remover margens e paddings padrão do navegador */
+/* Reset Básico */
 body, h1, h2, h3, h4, h5, h6, p, ul, ol, li, figure, figcaption, blockquote, dl, dd {
   margin: 0;
   padding: 0;
 }
-
-/* Garante que imagens e elementos de mídia não transbordem */
 img, picture, video, canvas, svg {
   display: block;
   max-width: 100%;
 }
-
-/* Define um modelo de caixa para facilitar o layout */
-*,
-*::before,
-*::after {
+*, *::before, *::after {
   box-sizing: border-box;
 }
 
-/* Estilos básicos para o corpo da página */
+/* 1. Estilos básicos do body */
 body {
-  font-family: Arial, sans-serif; /* Ou sua fonte preferida */
+  font-family: Arial, sans-serif;
   line-height: 1.6;
-  background-color: #f4f4f4; /* Uma cor de fundo suave, se quiser */
-  color: #333; /* Cor padrão do texto */
-  min-height: 100vh; /* Garante que o body ocupa pelo menos toda a altura da viewport */
-  display: flex; /* Para centralizar o conteúdo do AppLayout se não for full width */
-  flex-direction: column;
+  background-color: #f4f4f4; 
+  color: #333; 
 }
 
+
+/* ---- A SOLUÇÃO DEFINITIVA PARA O STICKY FOOTER ---- */
+
+/* 2. Aplicamos o layout flex DIRETAMENTE no #root */
 #root {
-  flex-grow: 1; /* Faz com que o div #root preencha o espaço disponível */
   display: flex;
   flex-direction: column;
+  min-height: 100vh; /* Força o app a ter 100% da altura da tela */
 }
 
+/* 3. O .main-content (miolo) */
 .main-content {
   width: 100%;
-  max-width: 1200px; /* Define uma largura máxima para o conteúdo */
-  margin: 0 auto;    /* Centraliza o container na página */
-  padding: 2rem 1.5rem; /* Adiciona espaçamento: 2rem em cima/baixo, 1.5rem nos lados */
+  max-width: 1200px; 
+  margin: 0 auto;    
+  padding: 2rem 1.5rem; 
   box-sizing: border-box;
+  
+  /* Esta linha faz o conteúdo "crescer" e empurrar o rodapé */
   flex-grow: 1;
 }
 
-
-/* Em telas menores, remove a largura máxima para usar todo o espaço */
+/* Responsividade */
 @media (max-width: 1200px) {
   .main-content {
     max-width: 100%;

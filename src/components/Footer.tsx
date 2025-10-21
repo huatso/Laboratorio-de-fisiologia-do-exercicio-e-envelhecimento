@@ -10,11 +10,6 @@ const Footer = () => {
   return (
     <footer className="footer-container">
       <div className="footer-content">
-        <img 
-          src={logoLaFEE} 
-          alt="Logo LaFEE" 
-          className="footer-logo" 
-        />
         <div className="footer-text">
           <p>
             © {currentYear} Todos os direitos reservados.

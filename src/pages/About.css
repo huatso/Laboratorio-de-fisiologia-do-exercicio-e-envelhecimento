@@ -1,0 +1,162 @@
+/* Arquivo: src/pages/About.css */
+
+/* Título Principal da Página */
+.about-page-title {
+  color: var(--cinza-escuro, #58626C);
+  text-align: center;
+  margin-bottom: 3rem;
+  font-weight: 700;
+  font-size: 3rem; /* Título maior */
+}
+
+/* Seção de Introdução (Jumbotron) */
+.about-intro-section {
+  background-color: var(--fundo-claro, #f8f9fa); /* Fundo claro para a introdução */
+  padding: 3rem 2rem;
+  border-radius: 8px;
+  margin-bottom: 3rem;
+  border-left: 6px solid var(--azul-principal, #008399); /* Borda azul de destaque */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.about-intro-section .intro-lead {
+  font-size: 1.25rem;
+  color: var(--cinza-escuro, #58626C);
+  line-height: 1.7;
+}
+
+/* Container do Conteúdo Principal (Missão, Linhas de Pesquisa, etc.) */
+.about-content-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem; /* Espaço entre as colunas */
+}
+
+.about-main-content {
+  flex: 2; /* Ocupa 2/3 do espaço */
+  min-width: 300px; /* Garante que não fique muito estreito em mobile */
+}
+
+.about-sidebar {
+  flex: 1; /* Ocupa 1/3 do espaço */
+  min-width: 280px; /* Garante que o card do professor não fique muito pequeno */
+}
+
+/* Títulos de Seções (Nossa Missão, Linhas de Pesquisa, etc.) */
+.about-section-title {
+  color: var(--cinza-escuro, #58626C);
+  font-weight: 600;
+  font-size: 1.8rem;
+  margin-top: 2.5rem;
+  margin-bottom: 1.2rem;
+  display: flex;
+  align-items: center;
+}
+
+.about-section-title .section-icon {
+  color: var(--laranja-destaque, #FFA300); /* Ícone laranja */
+  font-size: 1.5rem;
+  margin-right: 0.8rem;
+}
+
+/* Parágrafos de Conteúdo e Listas */
+.about-text-content {
+  /* Alinha o conteúdo com o texto do subtítulo (Ícone 1.5rem + Margem 0.8rem) */
+  padding-left: 2.3rem;
+}
+
+.about-text-content p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #495057;
+  margin-bottom: 1rem;
+  
+  /* Justifica o texto */
+  text-align: justify;
+}
+
+/* Estilização da lista (para justificar e alinhar) */
+.about-text-content ul {
+  /* Alinha a bolinha da lista com o texto */
+  padding-left: 20px; 
+  margin-bottom: 1rem;
+}
+
+.about-text-content li {
+  margin-bottom: 0.5rem; /* Espaço entre os itens da lista */
+  text-align: justify;  /* Justifica o texto dos itens da lista */
+  color: #495057;      /* Garante a mesma cor do parágrafo */
+}
+
+/* Card do Professor */
+.professor-card {
+  background-color: #fff;
+  border: 1px solid var(--borda-suave, #e9ecef);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.professor-photo {
+  width: 150px; /* Tamanho fixo para a foto */
+  height: 150px; /* Para garantir que seja um círculo */
+  object-fit: cover; /* Recorta a imagem para preencher o espaço */
+  border-radius: 50%; /* Transforma a imagem em círculo */
+  margin: 0 auto 1.5rem auto; /* Centraliza e adiciona margem inferior */
+  border: 3px solid var(--azul-principal, #008399); /* Borda azul no círculo */
+}
+
+.professor-name {
+  color: var(--cinza-escuro, #58626C);
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.professor-role {
+  color: var(--laranja-destaque, #FFA300); /* Função em laranja */
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.professor-description {
+  font-size: 0.9rem;
+  color: #6c757d;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  text-align: justify; /* Justifica a descrição também */
+}
+
+.lattes-btn {
+  background-color: var(--laranja-destaque, #FFA300);
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  display: inline-block; /* Para centralizar o botão */
+  transition: background-color 0.3s ease;
+}
+
+.lattes-btn:hover {
+  background-color: #e69500; /* Laranja mais escuro */
+  color: white;
+}
+
+/* Responsividade para o grid principal */
+@media (max-width: 992px) { /* Ponto de quebra para colunas */
+  .about-content-grid {
+    flex-direction: column; /* Empilha as colunas */
+  }
+  .about-main-content,
+  .about-sidebar {
+    flex: none; /* Remove a flexibilidade */
+    width: 100%; /* Ocupa 100% da largura */
+  }
+  .about-sidebar {
+    order: -1; /* Coloca o card do professor antes do texto em mobile */
+    margin-bottom: 2rem;
+  }
+}

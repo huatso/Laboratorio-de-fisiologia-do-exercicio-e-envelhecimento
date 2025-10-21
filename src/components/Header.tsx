@@ -8,10 +8,9 @@ const Header = () => {
 
   // Lista de links para facilitar a manutenção
   const navLinks = [
-    { name: 'Home', path: '/' },
     { name: 'Sobre', path: '/about' },
-    { name: 'Pesquisas', path: '/research' },
     { name: 'Membros', path: '/members' },
+    { name: 'Pesquisas', path: '/research' },
     { name: 'Publicações', path: '/publication' },
     { name: 'Recursos', path: '/resources' },
   ];

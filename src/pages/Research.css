@@ -1,0 +1,95 @@
+/* Arquivo: src/pages/Research.css */
+
+/* Título principal da página */
+.page-title {
+  color: var(--cinza-escuro, #58626C);
+  text-align: center;
+  margin-bottom: 3rem;
+  font-weight: 700;
+}
+
+/* Card para cada projeto de pesquisa */
+.research-project-card {
+  background-color: #fff;
+  border: 1px solid var(--borda-suave, #e9ecef);
+  border-radius: 8px;
+  padding: 2rem;
+  margin-bottom: 3rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Título de cada projeto */
+.project-title {
+  color: var(--azul-principal, #008399);
+  font-weight: 700;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+/* Descrição do projeto */
+.project-description {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #495057;
+  text-align: justify;
+  margin-bottom: 2rem;
+}
+
+/* Galeria de imagens */
+.image-gallery {
+  margin-bottom: 2rem;
+}
+
+.project-image {
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 100%; /* Garante que a imagem preencha a coluna */
+}
+
+.image-caption {
+  font-style: italic;
+  font-size: 0.9rem;
+  color: #6c757d;
+  text-align: center;
+  margin-top: 0.75rem;
+}
+
+/* Seção de publicações relacionadas */
+.publications-section-title {
+  font-weight: 600;
+  color: var(--cinza-escuro, #58626C);
+  font-size: 1.25rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid var(--borda-suave, #e9ecef);
+  padding-bottom: 0.5rem;
+}
+
+.project-publication-list {
+  list-style-type: '» '; /* Adiciona um marcador de citação */
+  padding-left: 1.5rem;
+}
+
+.project-publication-list li {
+  margin-bottom: 0.75rem;
+  text-align: justify;
+}
+
+.project-publication-list a {
+  color: var(--laranja-destaque, #FFA300);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.project-publication-list a:hover {
+  color: #e69500;
+  text-decoration: underline;
+}
+
+/* Divisor entre os projetos */
+.section-divider {
+  border: 0;
+  border-top: 2px solid var(--borda-suave, #e9ecef);
+  margin: 3rem auto;
+}

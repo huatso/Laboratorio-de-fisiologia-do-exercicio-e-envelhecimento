@@ -1,12 +1,116 @@
+/* ---- Estilos do Card do Membro ---- */
+
+.member-card {
+  border: 1px solid var(--borda-suave, #e9ecef) !important;
+  /* REMOVIDO: border-left: 4px solid var(--azul-principal, #008399) !important; */
+  border-radius: 8px !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%; /* Garante que os cards tenham a mesma altura */
+}
+
+.member-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* Imagem do Perfil no Card (do seu CSS, mas com 'border-radius') */
 .Profile {
   width: 150px;
   height: 150px;
   object-fit: cover;
   display: block;
-  margin: 10px auto 0;
+  margin: 1.5rem auto 1rem; /* Margem ajustada */
+  border-radius: 50%; /* Deixa a imagem redonda */
+  border: 3px solid var(--azul-principal, #008399);
 }
 
+.card-title-custom {
+  color: var(--cinza-escuro, #58626C);
+  font-weight: 700;
+  font-size: 1.4rem;
+}
+
+.card-subtitle-custom {
+  color: var(--laranja-destaque, #FFA300);
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+/* Texto de "teaser" (do seu CSS) */
 .teaser-text {
   text-align: justify;
   line-height: 1.5;
+  font-size: 0.9rem;
+  color: #6c757d;
+  margin-bottom: 1.5rem; /* Adiciona espaço antes do botão */
+}
+
+/* Botão "Leia Mais" (Laranja) */
+.btn-lafee-primary {
+  background-color: var(--laranja-destaque, #FFA300) !important;
+  border-color: var(--laranja-destaque, #FFA300) !important;
+  color: white !important;
+  font-weight: 600 !important;
+  padding: 0.6rem 1.25rem !important;
+  transition: background-color 0.3s ease;
+}
+
+.btn-lafee-primary:hover {
+  background-color: #e69500 !important; /* Laranja mais escuro */
+  border-color: #e69500 !important;
+}
+
+/* ---- Estilos do Modal ---- */
+
+.modal-title-custom {
+  color: var(--azul-principal, #008399);
+  font-weight: 700;
+}
+
+.member-modal .modal-header {
+  border-bottom: 2px solid var(--laranja-destaque, #FFA300);
+}
+
+.profile-image-modal {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border: 3px solid var(--azul-principal, #008399);
+}
+
+.modal-subtitle {
+  color: var(--laranja-destaque, #FFA300);
+}
+
+.modal-bio-title {
+  color: var(--cinza-escuro, #58626C);
+}
+
+.modal-bio-text {
+  white-space: pre-wrap; /* Mantém a formatação da bio */
+  max-height: 300px;
+  overflow-y: auto;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  text-align: justify;
+}
+
+.member-modal a {
+  color: var(--laranja-destaque, #FFA300);
+  font-weight: 600;
+}
+
+/* Botão "Fechar Perfil" (Secundário) */
+.btn-lafee-secondary {
+  background-color: transparent !important;
+  border-color: var(--cinza-escuro, #58626C) !important;
+  color: var(--cinza-escuro, #58626C) !important;
+  font-weight: 600 !important;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-lafee-secondary:hover {
+  background-color: var(--cinza-escuro, #58626C) !important;
+  color: white !important;
 }
