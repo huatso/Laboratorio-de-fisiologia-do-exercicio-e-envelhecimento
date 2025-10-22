@@ -23,13 +23,13 @@ const MembersData: Member[] = [
     },
     {
         Id: 2,
-        Name: "Lúcia Wang", 
+        Name: "Pesquisador 2", 
         ImageUrl: DefaultProfile, 
         SubTitle: "Gerontologia - USP",
         Teaser: "Estudante de graduação do curso de Gerontologia na EACH-USP, trabalhando ativamente em projetos de pesquisa sobre envelhecimento ativo, tecnologias assistivas e bem-estar em comunidades rurais.",   
-        Bio: "Lúcia Wang é uma promissora estudante de Gerontologia na Escola de Artes, Ciências e Humanidades da USP (EACH). Sua paixão reside na intersecção entre tecnologia e longevidade. Ela integra o grupo de pesquisa 'Tecnologia e Envelhecimento', onde colabora na avaliação da usabilidade de aplicativos e dispositivos vestíveis ('wearables') para monitoramento de idosos. Além da pesquisa, Lúcia é voluntária em um projeto social que promove a alfabetização digital para pessoas com mais de 60 anos, visando reduzir a exclusão social e fomentar a participação cívica na terceira idade.",
+        Bio: "Pesquisador(a) afiliado(a) ao curso de Gerontologia da Escola de Artes, Ciências e Humanidades da USP (EACH). Sua área de atuação principal é a intersecção entre tecnologia e longevidade, com foco no desenvolvimento e avaliação de ferramentas para o envelhecimento ativo.\n\nAtua ativamente no grupo de pesquisa 'Tecnologia e Envelhecimento', concentrando esforços na usabilidade de dispositivos vestíveis ('wearables') e aplicativos para monitoramento de idosos. Possui experiência em projetos de extensão que visam a inclusão digital de adultos 60+, contribuindo para a redução da exclusão social e o fomento da participação cívica.",
         Location: "São Paulo - BR",
-        ContactLinks: "luciawang@usp.br", // Email, Linkedin, Github, etc
+        ContactLinks: "email@usp.br", // Email, Linkedin, Github, etc
     },
     {
         Id: 3,
@@ -37,9 +37,9 @@ const MembersData: Member[] = [
         ImageUrl: DefaultProfile, 
         SubTitle: "Gerontologia - USP",
         Teaser: "Estudante de graduação do curso de Gerontologia na EACH-USP, trabalhando ativamente em projetos de pesquisa sobre envelhecimento ativo, tecnologias assistivas e bem-estar em comunidades rurais.",   
-        Bio: "Lúcia Wang é uma promissora estudante de Gerontologia na Escola de Artes, Ciências e Humanidades da USP (EACH). Sua paixão reside na intersecção entre tecnologia e longevidade. Ela integra o grupo de pesquisa 'Tecnologia e Envelhecimento', onde colabora na avaliação da usabilidade de aplicativos e dispositivos vestíveis ('wearables') para monitoramento de idosos. Além da pesquisa, Lúcia é voluntária em um projeto social que promove a alfabetização digital para pessoas com mais de 60 anos, visando reduzir a exclusão social e fomentar a participação cívica na terceira idade.",
+        Bio: "Pesquisador(a) afiliado(a) ao curso de Gerontologia da Escola de Artes, Ciências e Humanidades da USP (EACH). Sua área de atuação principal é a intersecção entre tecnologia e longevidade, com foco no desenvolvimento e avaliação de ferramentas para o envelhecimento ativo.\n\nAtua ativamente no grupo de pesquisa 'Tecnologia e Envelhecimento', concentrando esforços na usabilidade de dispositivos vestíveis ('wearables') e aplicativos para monitoramento de idosos. Possui experiência em projetos de extensão que visam a inclusão digital de adultos 60+, contribuindo para a redução da exclusão social e o fomento da participação cívica.",
         Location: "São Paulo - BR",
-        ContactLinks: "example@usp.br", // Email, Linkedin, Github, etc
+        ContactLinks: "email@usp.br", // Email, Linkedin, Github, etc
     },
     {
         Id: 4,
@@ -47,9 +47,9 @@ const MembersData: Member[] = [
         ImageUrl: DefaultProfile, 
         SubTitle: "Gerontologia - USP",
         Teaser: "Estudante de graduação do curso de Gerontologia na EACH-USP, trabalhando ativamente em projetos de pesquisa sobre envelhecimento ativo, tecnologias assistivas e bem-estar em comunidades rurais.",   
-        Bio: "Lúcia Wang é uma promissora estudante de Gerontologia na Escola de Artes, Ciências e Humanidades da USP (EACH). Sua paixão reside na intersecção entre tecnologia e longevidade. Ela integra o grupo de pesquisa 'Tecnologia e Envelhecimento', onde colabora na avaliação da usabilidade de aplicativos e dispositivos vestíveis ('wearables') para monitoramento de idosos. Além da pesquisa, Lúcia é voluntária em um projeto social que promove a alfabetização digital para pessoas com mais de 60 anos, visando reduzir a exclusão social e fomentar a participação cívica na terceira idade.",
+        Bio: "Pesquisador(a) afiliado(a) ao curso de Gerontologia da Escola de Artes, Ciências e Humanidades da USP (EACH). Sua área de atuação principal é a intersecção entre tecnologia e longevidade, com foco no desenvolvimento e avaliação de ferramentas para o envelhecimento ativo.\n\nAtua ativamente no grupo de pesquisa 'Tecnologia e Envelhecimento', concentrando esforços na usabilidade de dispositivos vestíveis ('wearables') e aplicativos para monitoramento de idosos. Possui experiência em projetos de extensão que visam a inclusão digital de adultos 60+, contribuindo para a redução da exclusão social e o fomento da participação cívica.",
         Location: "São Paulo - BR",
-        ContactLinks: "example@usp.br", // Email, Linkedin, Github, etc
+        ContactLinks: "email@usp.br", // Email, Linkedin, Github, etc
     },
     {
         Id: 5,
@@ -57,9 +57,9 @@ const MembersData: Member[] = [
         ImageUrl: DefaultProfile, 
         SubTitle: "Gerontologia - USP",
         Teaser: "Estudante de graduação do curso de Gerontologia na EACH-USP, trabalhando ativamente em projetos de pesquisa sobre envelhecimento ativo, tecnologias assistivas e bem-estar em comunidades rurais.",   
-        Bio: "Lúcia Wang é uma promissora estudante de Gerontologia na Escola de Artes, Ciências e Humanidades da USP (EACH). Sua paixão reside na intersecção entre tecnologia e longevidade. Ela integra o grupo de pesquisa 'Tecnologia e Envelhecimento', onde colabora na avaliação da usabilidade de aplicativos e dispositivos vestíveis ('wearables') para monitoramento de idosos. Além da pesquisa, Lúcia é voluntária em um projeto social que promove a alfabetização digital para pessoas com mais de 60 anos, visando reduzir a exclusão social e fomentar a participação cívica na terceira idade.",
+        Bio: "Pesquisador(a) afiliado(a) ao curso de Gerontologia da Escola de Artes, Ciências e Humanidades da USP (EACH). Sua área de atuação principal é a intersecção entre tecnologia e longevidade, com foco no desenvolvimento e avaliação de ferramentas para o envelhecimento ativo.\n\nAtua ativamente no grupo de pesquisa 'Tecnologia e Envelhecimento', concentrando esforços na usabilidade de dispositivos vestíveis ('wearables') e aplicativos para monitoramento de idosos. Possui experiência em projetos de extensão que visam a inclusão digital de adultos 60+, contribuindo para a redução da exclusão social e o fomento da participação cívica.",
         Location: "São Paulo - BR",
-        ContactLinks: "example@usp.br", // Email, Linkedin, Github, etc
+        ContactLinks: "email@usp.br", // Email, Linkedin, Github, etc
     },
     {
         Id: 6,
@@ -67,9 +67,9 @@ const MembersData: Member[] = [
         ImageUrl: DefaultProfile, 
         SubTitle: "Gerontologia - USP",
         Teaser: "Estudante de graduação do curso de Gerontologia na EACH-USP, trabalhando ativamente em projetos de pesquisa sobre envelhecimento ativo, tecnologias assistivas e bem-estar em comunidades rurais.",   
-        Bio: "Lúcia Wang é uma promissora estudante de Gerontologia na Escola de Artes, Ciências e Humanidades da USP (EACH). Sua paixão reside na intersecção entre tecnologia e longevidade. Ela integra o grupo de pesquisa 'Tecnologia e Envelhecimento', onde colabora na avaliação da usabilidade de aplicativos e dispositivos vestíveis ('wearables') para monitoramento de idosos. Além da pesquisa, Lúcia é voluntária em um projeto social que promove a alfabetização digital para pessoas com mais de 60 anos, visando reduzir a exclusão social e fomentar a participação cívica na terceira idade.",
+        Bio: "Pesquisador(a) afiliado(a) ao curso de Gerontologia da Escola de Artes, Ciências e Humanidades da USP (EACH). Sua área de atuação principal é a intersecção entre tecnologia e longevidade, com foco no desenvolvimento e avaliação de ferramentas para o envelhecimento ativo.\n\nAtua ativamente no grupo de pesquisa 'Tecnologia e Envelhecimento', concentrando esforços na usabilidade de dispositivos vestíveis ('wearables') e aplicativos para monitoramento de idosos. Possui experiência em projetos de extensão que visam a inclusão digital de adultos 60+, contribuindo para a redução da exclusão social e o fomento da participação cívica.",
         Location: "São Paulo - BR",
-        ContactLinks: "example@usp.br", // Email, Linkedin, Github, etc
+        ContactLinks: "email@usp.br", // Email, Linkedin, Github, etc
     },
 ];
 

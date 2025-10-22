@@ -1,65 +1,96 @@
-import React from 'react';
-import './Resources.css'; // Importe o novo CSS
+import React, { useMemo } from 'react';
+import { Accordion, ListGroup, Button } from 'react-bootstrap'; 
+import './Resources.css';
 
-// Fictional data for the resource files.
-// Substitua pelas suas informações e links do Google Drive.
-const resourceFiles = [
-  {
-    id: 1,
-    title: 'Artigo sobre Fisiologia do Esforço.pdf',
-    description: 'Publicação de 2024 sobre as adaptações cardiovasculares.',
-    downloadUrl: '#', // Cole seu link aqui
-  },
-  {
-    id: 2,
-    title: 'Planilha de Coleta de Dados.xlsx',
-    description: 'Modelo de planilha para coleta de dados de VO2 máximo.',
-    downloadUrl: '#', // Cole seu link aqui
-  },
-  {
-    id: 3,
-    title: 'Apresentação sobre Biomecânica.pptx',
-    description: 'Slides da apresentação do último congresso da equipe.',
-    downloadUrl: '#', // Cole seu link aqui
-  },
-];
+import resourceFiles, { Resource } from "../data/Resources"; 
 
-function Resources() {
-  return (
-    // O container principal é o <main className="main-content"> do seu AppLayout
-    <div>
-      <h1 className="page-title">Recursos e Downloads</h1>
-      
-      <div className="resource-list">
-        {resourceFiles.map((file) => (
-          <div key={file.id} className="resource-card">
-            
-            {/* Seção de Informações do Arquivo */}
-            <div className="resource-info">
-              <h5 className="resource-title">
-                {/* Ícone do Arquivo */}
-                <i className="bi bi-file-earmark-text resource-icon"></i>
-                {file.title}
-              </h5>
-              <p className="resource-description">{file.description}</p>
-            </div>
+type GroupedResources = {
+    [tag: string]: Resource[];
+};
 
-            {/* Seção do Botão de Download */}
-            <a 
-              href={file.downloadUrl} 
-              target="_blank" // Abre em nova aba
-              rel="noopener noreferrer" 
-              className="resource-download-btn"
-            >
-              {/* Ícone de Download */}
-              <i className="bi bi-download download-icon"></i>
-              Baixar
-            </a>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
+function ResourcesPage() {
+    const groupedResources = useMemo(() => {
+        const groups: GroupedResources = {};
+
+        resourceFiles.forEach(file => {
+            const tag = file.Tag && file.Tag.trim() !== '' ? file.Tag : 'Sem Tema';
+
+            if (!groups[tag]) {
+                groups[tag] = [];
+            }
+            groups[tag].push(file);
+        });
+
+        Object.keys(groups).forEach(tag => {
+            groups[tag].sort((a, b) => a.Title.localeCompare(b.Title));
+        });
+
+        return groups;
+    }, [resourceFiles]);
+
+    const sortedTags = Object.keys(groupedResources).sort();
+
+    return (
+        <div className="p-4"> 
+            <h1 className="page-title mb-4">Recursos e Downloads</h1>
+
+            <Accordion defaultActiveKey={sortedTags[0]}> 
+                {sortedTags.map((tag) => (
+                    <Accordion.Item eventKey={tag} key={tag}>
+                        
+                        <Accordion.Header>
+                            {tag} ({groupedResources[tag].length} arquivos)
+                        </Accordion.Header>
+
+                        <Accordion.Body className="p-0">
+                            
+                            <ListGroup variant="flush">
+                                {groupedResources[tag].map((file: Resource) => (
+                                    <ListGroup.Item 
+                                        key={file.Id} 
+                                        className="d-flex justify-content-between align-items-center"
+                                    >
+                                        <div className="resource-details me-3">
+                                            <div className="d-flex align-items-center mb-1">
+                                                <i className="bi bi-file-earmark-text me-2"></i>
+                                                
+                                                <strong className="me-2">{file.Title}</strong>
+                                                
+                                                {file.UploadYearMonth && (
+                                                    <small className="text-muted">
+                                                        (Upload: {file.UploadYearMonth})
+                                                    </small>
+                                                )}
+                                            </div>
+                                            
+                                            {file.Description && (
+                                                <p className="mb-0 text-secondary small">{file.Description}</p>
+                                            )}
+                                        </div>
+
+                                        {file.DownloadUrl ? (
+                                            <Button 
+                                                href={file.DownloadUrl}
+                                                target="_blank" 
+                                                rel="noopener noreferrer"
+                                                variant="primary" 
+                                                size="sm"
+                                            >
+                                                <i className="bi bi-download me-1"></i> Baixar
+                                            </Button>
+                                        ) : (
+                                            <span className="text-danger small">Link Indisponível</span>
+                                        )}
+                                    </ListGroup.Item>
+                                ))}
+                            </ListGroup>
+
+                        </Accordion.Body>
+                    </Accordion.Item>
+                ))}
+            </Accordion>
+        </div>
+    );
 }
 
-export default Resources;
+export default ResourcesPage;

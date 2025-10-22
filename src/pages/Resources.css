@@ -1,91 +1,51 @@
-/* Arquivo: src/pages/Resources.css */
+/* Definição das variáveis CSS no seletor body (Substituto para :root) */
+body {
+    --primary-color: #FF9900;     /* Pantone #1375C (Laranja) */
+    --secondary-color: #0084A3;   /* Pantone #632C (Azul Petróleo) */
+    --accent-color: #00BFE8;      /* Pantone #3115C (Ciano Claro) - Usado para ícones */
+    --hover-dark: #006F85;        /* Tom ligeiramente mais escuro que secondary-color */
+    --text-color-dark: #4F585C;   /* Pantone #431C (Cinza/Grafite) */
+    --borda-suave: #e9ecef;       /* Borda de Cards e Divisores */
+}
 
-/* Título da Página */
+/* Título principal */
 .page-title {
-  color: var(--cinza-escuro, #58626C);
-  text-align: center;
-  margin-bottom: 3rem;
-  font-weight: 700;
+    color: var(--text-color-dark);
+    font-weight: 700;
 }
 
-/* Card individual para cada recurso */
-.resource-card {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap; /* Para telas pequenas */
-  
-  background-color: #fff;
-  border: 1px solid var(--borda-suave, #e9ecef);
-  border-left: 4px solid var(--azul-principal, #008399);
-  border-radius: 8px;
-  padding: 1.5rem;
-  margin-bottom: 1.25rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  transition: box-shadow 0.3s ease;
+/* 1. Estiliza o cabeçalho do Accordion (o título do Tema) */
+.accordion-button {
+    /* Cor de fundo padrão: Azul Petróleo */
+    background-color: var(--secondary-color) !important;
+    color: white !important;
+    font-weight: 600;
+    border-color: var(--secondary-color) !important;
 }
 
-.resource-card:hover {
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+/* 2. Hover e Estado Ativo do Accordion (Baixo Contraste) */
+.accordion-button:not(.collapsed),
+.accordion-button:hover {
+    /* Usa o tom mais escuro para o hover/ativo */
+    background-color: var(--hover-dark) !important; 
+    color: white !important;
 }
 
-.resource-info {
-  flex: 1; /* Ocupa o espaço disponível */
-  margin-right: 1.5rem;
+/* Estiliza os botões de ação */
+.btn-primary {
+    /* Usa a primary-color (Laranja) */
+    background-color: var(--primary-color) !important;
+    border-color: var(--primary-color) !important;
 }
 
-.resource-title {
-  font-weight: 600;
-  color: var(--cinza-escuro, #58626C);
-  font-size: 1.25rem;
-  margin-bottom: 0.5rem;
-  display: flex;
-  align-items: center;
+/* Efeito hover para o botão principal */
+.btn-primary:hover {
+    background-color: #e68a00 !important; 
+    border-color: #e68a00 !important;
 }
 
-.resource-icon {
-  font-size: 1.2rem;
-  margin-right: 0.75rem;
-  color: var(--azul-principal, #008399);
-}
-
-.resource-description {
-  font-size: 0.95rem;
-  color: #6c757d;
-  margin: 0;
-}
-
-/* Botão de Download (Laranja) */
-.resource-download-btn {
-  background-color: var(--laranja-destaque, #FFA300);
-  color: white;
-  text-decoration: none;
-  font-weight: 600;
-  padding: 0.75rem 1.5rem;
-  border-radius: 6px;
-  display: inline-flex;
-  align-items: center;
-  transition: background-color 0.3s ease;
-}
-
-.resource-download-btn:hover {
-  background-color: #e69500; /* Laranja mais escuro */
-  color: white;
-}
-
-.download-icon {
-  margin-right: 0.5rem;
-}
-
-/* Responsividade para o card */
-@media (max-width: 768px) {
-  .resource-card {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  
-  .resource-info {
-    margin-right: 0;
-    margin-bottom: 1.5rem;
-  }
+/* Estilo para o ícone de arquivo */
+.bi-file-earmark-text {
+    /* Usa a accent-color (Ciano Claro) para ícones, pois não conflita com os botões */
+    color: var(--accent-color); 
 }

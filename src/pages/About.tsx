@@ -1,24 +1,17 @@
-// Arquivo: src/pages/About.tsx
-
 import React from 'react';
-import './About.css'; // O CSS que criamos antes continua o mesmo
-
+import './About.css'; 
 function Sobre() {
   return (
     <div>
-      {/* Título Principal */}
       <h1 className="about-page-title">Sobre o LAFEE</h1>
 
-      {/* Seção de Introdução (Texto Reformulado) */}
       <div className="about-intro-section">
         <p className="intro-lead">
           O Laboratório de Fisiologia do Exercício e Envelhecimento (LaFEE) da EACH-USP é um núcleo de pesquisa focado em compreender as complexas interações entre a atividade física, o processo de envelhecimento e a saúde humana.
         </p>
       </div>
 
-      {/* Conteúdo Principal e Barra Lateral */}
       <div className="about-content-grid">
-        {/* Seção de Conteúdo Principal (Textos Reformulados) */}
         <div className="about-main-content">
           <h3 className="about-section-title">
             <i className="bi bi-bullseye section-icon"></i>
@@ -51,21 +44,16 @@ function Sobre() {
             Infraestrutura
           </h3>
           <div className="about-text-content">
-            {/* NOTA: Mantive este texto, pois ele é 100% coerente 
-              com as linhas de pesquisa encontradas (VO2, marcha, força).
-            */}
             <p>
               Contamos com instalações modernas para avaliações funcionais e bioquímicas, incluindo equipamentos para ergoespirometria (análise de VO2), análise de marcha, eletromiografia de superfície (EMG) e dinamometria isocinética.
             </p>
           </div>
         </div>
 
-        {/* Seção do Card do Professor (Informações Atualizadas) */}
         <div className="about-sidebar">
           <div className="professor-card">
             <img 
-              // Imagem de um congresso, parece ser o Prof. Luciano Pontes
-              src="https://jornal.usp.br/wp-content/uploads/2018/03/20180312_FRANCISCO-LUCIANO-PONTES-JUNIOR.jpg" 
+              src="https://i1.rgstatic.net/ii/profile.image/638345700970496-1529204883121_Q128/Francisco-Pontes.jpg" 
               className="professor-photo" 
               alt="Foto do Professor Francisco Luciano Pontes Júnior" 
             />

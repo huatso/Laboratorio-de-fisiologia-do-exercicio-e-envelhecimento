@@ -1,95 +1,100 @@
-/* Arquivo: src/pages/Research.css */
+/* Definição das variáveis no body (Substituindo :root) */
+body {
+    --primary-action-color: #0084A3;   /* Azul Petróleo */
+    --accent-visual-color: #00BFE8;    /* Ciano Claro */
+    --hover-dark: #006F85;             /* Tom mais escuro do Azul Petróleo */
+    --text-color-dark: #4F585C;        /* Cinza/Grafite */
+    --borda-suave: #e9ecef;
+    --fundo-bloco: #fcfcfc;            /* Fundo muito leve para os blocos */
+}
 
-/* Título principal da página */
+/* Título principal (H1) */
 .page-title {
-  color: var(--cinza-escuro, #58626C);
-  text-align: center;
-  margin-bottom: 3rem;
-  font-weight: 700;
+    color: var(--text-color-dark);
+    font-weight: 700;
 }
 
-/* Card para cada projeto de pesquisa */
-.research-project-card {
-  background-color: #fff;
-  border: 1px solid var(--borda-suave, #e9ecef);
-  border-radius: 8px;
-  padding: 2rem;
-  margin-bottom: 3rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+/* --- Estilos da Lista de Pesquisas --- */
+
+.research-item-block {
+    /* Fundo levemente off-white */
+    background-color: var(--fundo-bloco);
+    border: 1px solid var(--borda-suave);
+    border-radius: 6px;
+    
+    /* Barra lateral forte: a chave do design */
+    border-left: 6px solid var(--primary-action-color); 
+    
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
 }
 
-/* Título de cada projeto */
-.project-title {
-  color: var(--azul-principal, #008399);
-  font-weight: 700;
-  font-size: 2rem;
-  margin-bottom: 1rem;
+.research-item-block:hover {
+    /* Hover sutil: a cor da barra lateral escurece */
+    border-left-color: var(--hover-dark); 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-/* Descrição do projeto */
-.project-description {
-  font-size: 1.1rem;
-  line-height: 1.7;
-  color: #495057;
-  text-align: justify;
-  margin-bottom: 2rem;
+/* Título Principal da Linha de Pesquisa (H3) */
+.research-title-main {
+    color: var(--text-color-dark); /* Nome em Cinza/Grafite */
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
 }
 
-/* Galeria de imagens */
-.image-gallery {
-  margin-bottom: 2rem;
+.research-title-main i {
+    color: var(--accent-visual-color); /* Ícone em Ciano Claro */
+    font-size: 1.6rem;
 }
 
-.project-image {
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  width: 100%; /* Garante que a imagem preencha a coluna */
+/* Informação do Líder */
+.leader-info {
+    font-size: 0.9rem;
+    /* Adicionado pequeno destaque para o Líder */
+    color: var(--primary-action-color) !important; 
+}
+.leader-name {
+    font-weight: 700;
 }
 
-.image-caption {
-  font-style: italic;
-  font-size: 0.9rem;
-  color: #6c757d;
-  text-align: center;
-  margin-top: 0.75rem;
+/* Descrição */
+.research-description-text {
+    line-height: 1.6;
+    color: #495057;
+    font-size: 1rem;
+    margin-top: 1rem;
 }
 
-/* Seção de publicações relacionadas */
-.publications-section-title {
-  font-weight: 600;
-  color: var(--cinza-escuro, #58626C);
-  font-size: 1.25rem;
-  margin-top: 2rem;
-  margin-bottom: 1rem;
-  border-bottom: 2px solid var(--borda-suave, #e9ecef);
-  padding-bottom: 0.5rem;
+/* --- Lista de Projetos (Coluna Lateral) --- */
+
+.section-subtitle {
+    color: var(--primary-action-color); /* Azul Petróleo */
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+    /* Linha divisória simples */
+    border-bottom: 1px solid var(--borda-suave);
+    padding-bottom: 0.25rem;
 }
 
-.project-publication-list {
-  list-style-type: '» '; /* Adiciona um marcador de citação */
-  padding-left: 1.5rem;
+.project-list {
+    list-style: none; /* Remove marcadores padrão */
+    padding-left: 0;
+    margin-bottom: 0;
 }
 
-.project-publication-list li {
-  margin-bottom: 0.75rem;
-  text-align: justify;
+.project-list-item {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 0.4rem;
+    color: #495057;
 }
 
-.project-publication-list a {
-  color: var(--laranja-destaque, #FFA300);
-  text-decoration: none;
-  font-weight: 600;
-  transition: color 0.3s ease;
-}
-
-.project-publication-list a:hover {
-  color: #e69500;
-  text-decoration: underline;
-}
-
-/* Divisor entre os projetos */
-.section-divider {
-  border: 0;
-  border-top: 2px solid var(--borda-suave, #e9ecef);
-  margin: 3rem auto;
+.project-list-item i {
+    color: var(--accent-visual-color); /* Ciano Claro para marcadores de lista */
+    font-size: 1.1rem;
+    vertical-align: top;
 }

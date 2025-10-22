@@ -1,150 +1,110 @@
-/* Arquivo: src/pages/Publication.css */
-
-:root {
-  --cinza-escuro: #58626C;
-  --azul-principal: #008399;
-  --laranja-destaque: #FFA300;
-  --fundo-claro: #f8f9fa;
-  --borda-suave: #e9ecef;
+/* Definição das variáveis CSS no seletor body (Substituindo :root) */
+body {
+    --primary-color: #FF9900;     /* Laranja (Ação/Links) */
+    --secondary-color: #0084A3;   /* Azul Petróleo (Fundo de Agrupamento) */
+    --accent-color: #00BFE8;      /* Ciano Claro (Borda, Links, Destaque) */
+    --hover-dark: #006F85;        /* Tom mais escuro do Azul Petróleo */
+    --text-color-dark: #4F585C;   /* Cinza/Grafite (Títulos) */
+    --borda-suave: #e9ecef;       /* Borda de Cards e Divisores */
 }
 
 .publications-container {
-  max-width: 900px;
-  margin: 0 auto;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 15px; /* Garante padding em telas pequenas */
 }
 
+/* Título principal (H1) */
 .page-title {
-  color: var(--cinza-escuro);
-  text-align: center;
-  margin-bottom: 3rem;
-  font-weight: 700;
+    color: var(--text-color-dark);
+    text-align: center;
+    margin-bottom: 3rem;
+    font-weight: 700;
 }
 
-.year-title {
-  color: var(--azul-principal);
-  border-bottom: 2px solid var(--borda-suave);
-  padding-bottom: 0.5rem;
-  margin-bottom: 2rem;
-  font-size: 2.5rem;
+/* --- Estilos do Accordion (Coerente com Resources) --- */
+
+.accordion-item {
+    margin-bottom: 10px; 
+    border: 1px solid var(--borda-suave);
+    border-radius: 6px;
 }
 
-/* Card individual */
-.publication-card {
-  background-color: #fff;
-  border: 1px solid var(--borda-suave);
-  border-left: 4px solid var(--azul-principal);
-  border-radius: 8px;
-  padding: 1.5rem;
-  margin-bottom: 1.5rem;
-  transition: box-shadow 0.3s ease, transform 0.3s ease;
+/* Header do Accordion (Título do Ano) */
+.accordion-button {
+    /* Usa as cores de agrupamento */
+    background-color: var(--secondary-color) !important;
+    color: white !important;
+    font-weight: 600;
+    font-size: 1.15rem;
+    border-color: var(--secondary-color) !important;
+    padding: 1rem 1.25rem;
 }
 
-.publication-card:hover {
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  transform: translateY(-3px);
+/* Hover e Estado Ativo do Accordion */
+.accordion-button:not(.collapsed),
+.accordion-button:hover {
+    background-color: var(--hover-dark) !important; 
+    color: white !important;
+    box-shadow: none !important;
 }
 
-/* --- NOVOS ESTILOS E AJUSTES --- */
+/* --- Estilos da Publicação (ListGroup.Item) --- */
 
-/* Remove margem padrão dos parágrafos dentro do card */
-.publication-card p, 
-.publication-card strong {
-  margin: 0;
+.publication-item {
+    /* Borda lateral com a cor Ciano Claro (igual ao Resource Card) */
+    border-left: 5px solid var(--accent-color); 
+    padding: 1rem 1.25rem;
+    transition: background-color 0.2s ease;
 }
 
-/* Div que agrupa o rótulo e o conteúdo */
-.publication-field {
-  margin-bottom: 1.1rem; /* Espaço entre "Título", "Autores", "Fonte" */
-  line-height: 1.6;
-}
-/* Remove a margem do último campo */
-.publication-field:last-child {
-  margin-bottom: 0;
+.publication-item:hover {
+    background-color: #fafafa;
 }
 
-/* Estilo do Rótulo (ex: "Título:", "Autores:") */
-.publication-label {
-  display: block;
-  font-weight: 700;
-  font-size: 0.85rem; /* Letra pequena para o rótulo */
-  color: var(--azul-principal); /* Usa a cor de destaque */
-  margin-bottom: 0.25rem;
-  text-transform: uppercase; /* Deixa o rótulo bem distinto */
+.publication-details {
+    flex-grow: 1; 
 }
 
-/* Título (conteúdo) */
+/* Título */
 .publication-title {
-  font-weight: 600;
-  color: var(--cinza-escuro);
-  font-size: 1.2rem; /* Título com mais destaque */
-  display: block;
+    font-weight: 700;
+    color: var(--text-color-dark);
+    font-size: 1rem;
+    display: block;
+    margin-bottom: 0.2rem;
 }
 
-/* Autores (conteúdo) */
+/* Autores */
 .publication-authors {
-  font-size: 0.9rem; /* Letra menor para a lista de autores */
-  color: #495057;
-  line-height: 1.5; /* Melhora a leitura da lista longa */
+    font-size: 0.85rem;
+    color: #6c757d; 
+    line-height: 1.4;
 }
 
-/* Fonte e Detalhes (conteúdo) */
+/* Fonte/Detalhes/Link */
 .publication-source-details {
-  font-size: 1rem;
+    font-size: 0.85rem;
+    color: var(--text-color-dark);
 }
 
 .publication-source {
-  font-style: italic;
-  color: #6c757d;
+    font-style: italic;
+    color: var(--secondary-color);
 }
 
+/* Link de Acessar Artigo */
 .publication-source-details a {
-  text-decoration: none;
-  font-weight: 600;
-  color: var(--laranja-destaque);
-  transition: color 0.2s ease;
+    text-decoration: none;
+    font-weight: 600;
+    color: var(--primary-color); /* Laranja */
+    transition: color 0.2s ease;
 }
 
 .publication-source-details a:hover {
-  color: #e69500;
-  text-decoration: underline;
+    color: #e69500; 
+    text-decoration: underline;
 }
 
-/* --- Estilos de Paginação --- */
-.pagination-controls {
-  display: flex;
-  justify-content: center; /* Alterado de 'space-between' para 'center' */
-  align-items: center;
-  gap: 1.5rem; /* Adiciona um espaço entre os botões */
-  margin-top: 2.5rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid var(--borda-suave);
-}
-
-.pagination-controls span {
-  font-size: 1rem;
-  font-weight: 600;
-  color: var(--cinza-escuro);
-}
-
-/* Pagination CSS */
-.pagination-controls button {
-  background-color: var(--laranja-destaque);
-  color: white;
-  border: none;
-  padding: 0.75rem 1.25rem;
-  border-radius: 6px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background-color 0.3s ease, opacity 0.3s ease;
-}
-
-.pagination-controls button:hover {
-  background-color: #e69500; /* Laranja mais escuro */
-}
-
-/* Estilo para o botão desabilitado */
-.pagination-controls button:disabled {
-  background-color: #ccc;
-  opacity: 0.6;
-  cursor: not-allowed;
-}
+/* --- ESTILOS DE PAGINAÇÃO ANTIGOS REMOVIDOS --- */
+/* (Removidos para evitar conflito, já que a paginação foi eliminada do JSX) */

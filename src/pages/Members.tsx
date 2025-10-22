@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import "./Members.css"; // Nosso CSS personalizado
+import "./Members.css"; // Nosso CSS customizado com as cores da LaFEE
 
 import { Modal, Container, Row, Col, Button, Card } from 'react-bootstrap';
-import MembersData, { Member } from "../data/Members"; // Você já tem este arquivo
+// Importação do array de dados e da interface Member
+import MembersData, { Member } from "../data/Members"; 
 
-// Não precisamos mais desta linha se o Bootstrap já está no index.html
-// import 'bootstrap/dist/css/bootstrap.min.css';
+// --- Interfaces de Props ---
 
 interface ModalProps {
     member: Member | null;
@@ -13,11 +13,17 @@ interface ModalProps {
     handleClose: () => void;
 }
 
+interface CardProps {
+    member: Member;
+    HandleClick: () => void;
+}
+
+// --- Componente Modal ---
+
 function MemberDetailModal({ member, show, handleClose }: ModalProps) {
     if (!member) return null; 
 
     return (
-        // Adicionada classe para customização do Modal
         <Modal show={show} onHide={handleClose} size="lg" centered className="member-modal">
             <Modal.Header closeButton>
                 <Modal.Title className="modal-title-custom">Perfil Completo</Modal.Title>
@@ -31,11 +37,11 @@ function MemberDetailModal({ member, show, handleClose }: ModalProps) {
                         <img 
                             src={member.ImageUrl} 
                             alt={`Foto de ${member.Name}`} 
-                            // Adicionada classe para a imagem do modal
                             className="profile-image-modal rounded-circle mb-3 shadow"
                         />
                         <h5 className="fw-bold mt-2">{member.Name}</h5>
-                        <p className="modal-subtitle small mb-0">{member.SubTitle}</p>
+                        {/* Classe customizada */}
+                        <p className="modal-subtitle-custom small mb-0">{member.SubTitle}</p>
                         <p className="text-muted small">{member.Location}</p>
                     </Col>
                     
@@ -51,8 +57,8 @@ function MemberDetailModal({ member, show, handleClose }: ModalProps) {
                 </Row>
             </Modal.Body>
             <Modal.Footer>
-                {/* Botão customizado */}
-                <Button className="btn-lafee-secondary" onClick={handleClose}>
+                {/* Classe customizada para o botão de fechar */}
+                <Button className="btn-member-close" onClick={handleClose}>
                     Fechar Perfil
                 </Button>
             </Modal.Footer>
@@ -60,29 +66,23 @@ function MemberDetailModal({ member, show, handleClose }: ModalProps) {
     );
 }
 
-interface CardProps {
-    member: Member;
-    HandleClick: () => void;
-}
+// --- Componente Card ---
 
 function MemberCard({ member, HandleClick }: CardProps) {
     return (
         <Col md={6} lg={4} className="mb-4">
-            {/* Adicionada classe para customização do Card */}
             <Card className="member-card"> 
-                {/* Classe "Profile" mantida do seu CSS original */}
                 <Card.Img variant="top" src={member.ImageUrl ?? ''} className="Profile"/>
                 <Card.Body className="d-flex flex-column text-center">
-                    <Card.Title className="card-title-custom">{member.Name}</Card.Title>
-                    <Card.Subtitle className="card-subtitle-custom mb-2">
+                    <Card.Title className="card-title-custom fw-bold">{member.Name}</Card.Title>
+                    <Card.Subtitle className="card-subtitle-custom mb-2 text-secondary">
                         {member.SubTitle}
                     </Card.Subtitle>
-                    {/* Classe "teaser-text" mantida */}
-                    <Card.Text className="teaser-text">
+                    <Card.Text className="teaser-text text-justify">
                         {member.Teaser}
                     </Card.Text>
-                    {/* Botão customizado */}
-                    <Button onClick={HandleClick} className="btn-lafee-primary mt-auto">
+                    {/* Classe customizada para o botão de ação */}
+                    <Button onClick={HandleClick} className="btn-member-action mt-auto">
                         Leia Mais
                     </Button>
                 </Card.Body>
@@ -90,6 +90,8 @@ function MemberCard({ member, HandleClick }: CardProps) {
         </Col>
     );
 }
+
+// --- Componente Principal ---
 
 function Members() {
     const [showModal, setShowModal] = useState(false);
@@ -106,9 +108,7 @@ function Members() {
     };
 
     return (
-        // Adicionada classe para o container da página
         <Container className="my-5 members-container">
-            {/* Usando a classe global .page-title */}
             <h1 className="page-title text-center mb-5">Nossa Equipe</h1>
             
             <Row className="justify-content-center"> 
