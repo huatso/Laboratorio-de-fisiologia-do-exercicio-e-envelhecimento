@@ -51,8 +51,8 @@ function MemberDetailModal({ member, show, handleClose }: ModalProps) {
                             {member.Bio}
                         </p>
                         <hr className="my-3"/>
-                        <h6 className="fw-bold">Contato</h6>
-                        <p className="small mb-0">Email/Link: <a href={`mailto:${member.ContactLinks}`}>{member.ContactLinks}</a></p>
+                        <h6 className="fw-bold">Currículo Lattes:</h6>
+                        <p className="small mb-0"><a href={`mailto:${member.Links}`}>{member.Links}</a></p>
                     </Col>
                 </Row>
             </Modal.Body>
