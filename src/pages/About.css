@@ -4,121 +4,126 @@
 .about-page-title {
   color: var(--cinza-escuro, #58626C);
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 2.5rem;
+  margin-top: 1.5rem;
   font-weight: 700;
-  font-size: 3rem; /* Título maior */
+  font-size: 2.8rem;
 }
 
 /* Seção de Introdução (Jumbotron) */
 .about-intro-section {
-  background-color: var(--fundo-claro, #f8f9fa); /* Fundo claro para a introdução */
-  padding: 3rem 2rem;
+  background-color: var(--fundo-claro, #f8f9fa);
+  padding: 2.5rem;
   border-radius: 8px;
   margin-bottom: 3rem;
-  border-left: 6px solid var(--azul-principal, #008399); /* Borda azul de destaque */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border-left: 6px solid var(--azul-principal, #008399);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
 .about-intro-section .intro-lead {
-  font-size: 1.25rem;
+  font-size: 1.15rem;
   color: var(--cinza-escuro, #58626C);
-  line-height: 1.7;
+  line-height: 1.8;
+  text-align: justify; /* Mantendo o padrão de leitura acadêmica */
 }
 
-/* Container do Conteúdo Principal (Missão, Linhas de Pesquisa, etc.) */
+/* Container do Conteúdo Principal */
 .about-content-grid {
   display: flex;
   flex-wrap: wrap;
-  gap: 2rem; /* Espaço entre as colunas */
+  gap: 3rem; 
 }
 
 .about-main-content {
-  flex: 2; /* Ocupa 2/3 do espaço */
-  min-width: 300px; /* Garante que não fique muito estreito em mobile */
+  flex: 2;
+  min-width: 300px;
 }
 
 .about-sidebar {
-  flex: 1; /* Ocupa 1/3 do espaço */
-  min-width: 280px; /* Garante que o card do professor não fique muito pequeno */
+  flex: 1;
+  min-width: 300px;
 }
 
-/* Títulos de Seções (Nossa Missão, Linhas de Pesquisa, etc.) */
+/* Títulos de Seções */
 .about-section-title {
   color: var(--cinza-escuro, #58626C);
   font-weight: 600;
-  font-size: 1.8rem;
-  margin-top: 2.5rem;
+  font-size: 1.6rem;
+  margin-top: 0; /* Ajustado para alinhar com o topo do sidebar */
   margin-bottom: 1.2rem;
   display: flex;
   align-items: center;
 }
 
+/* Margem superior apenas para os títulos que não são o primeiro */
+.about-section-title:not(:first-child) {
+  margin-top: 2.5rem;
+}
+
 .about-section-title .section-icon {
-  color: var(--laranja-destaque, #FFA300); /* Ícone laranja */
-  font-size: 1.5rem;
+  color: var(--laranja-destaque, #FFA300);
+  font-size: 1.4rem;
   margin-right: 0.8rem;
 }
 
-/* Parágrafos de Conteúdo e Listas */
+/* Conteúdo de Texto */
 .about-text-content {
-  /* Alinha o conteúdo com o texto do subtítulo (Ícone 1.5rem + Margem 0.8rem) */
-  padding-left: 2.3rem;
+  padding-left: 2.2rem;
 }
 
-.about-text-content p {
+.about-text-content p, 
+.about-text-content li {
   font-size: 1rem;
   line-height: 1.7;
   color: #495057;
-  margin-bottom: 1rem;
-  
-  /* Justifica o texto */
   text-align: justify;
 }
 
-/* Estilização da lista (para justificar e alinhar) */
 .about-text-content ul {
-  /* Alinha a bolinha da lista com o texto */
-  padding-left: 20px; 
-  margin-bottom: 1rem;
+  padding-left: 1.2rem;
+  margin-top: 0.5rem;
 }
 
 .about-text-content li {
-  margin-bottom: 0.5rem; /* Espaço entre os itens da lista */
-  text-align: justify;  /* Justifica o texto dos itens da lista */
-  color: #495057;      /* Garante a mesma cor do parágrafo */
+  margin-bottom: 0.8rem;
 }
 
 /* Card do Professor */
 .professor-card {
   background-color: #fff;
-  border: 1px solid var(--borda-suave, #e9ecef);
+  border: 1px solid #e9ecef;
   border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  padding: 1.5rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
+  padding: 2rem 1.5rem;
   text-align: center;
+  position: sticky; /* O card acompanha o scroll em telas grandes */
+  top: 20px;
 }
 
 .professor-photo {
-  width: 150px; /* Tamanho fixo para a foto */
-  height: 150px; /* Para garantir que seja um círculo */
-  object-fit: cover; /* Recorta a imagem para preencher o espaço */
-  border-radius: 50%; /* Transforma a imagem em círculo */
-  margin: 0 auto 1.5rem auto; /* Centraliza e adiciona margem inferior */
-  border: 3px solid var(--azul-principal, #008399); /* Borda azul no círculo */
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 0 auto 1.5rem auto;
+  border: 4px solid var(--azul-principal, #008399);
 }
 
 .professor-name {
   color: var(--cinza-escuro, #58626C);
   font-weight: 700;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   margin-bottom: 0.5rem;
+  line-height: 1.3;
 }
 
 .professor-role {
-  color: var(--laranja-destaque, #FFA300); /* Função em laranja */
-  font-size: 1rem;
-  font-weight: 500;
+  color: var(--laranja-destaque, #FFA300);
+  font-size: 0.95rem;
+  font-weight: 600;
   margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .professor-description {
@@ -126,7 +131,7 @@
   color: #6c757d;
   line-height: 1.6;
   margin-bottom: 1.5rem;
-  text-align: justify; /* Justifica a descrição também */
+  text-align: justify;
 }
 
 .lattes-btn {
@@ -134,29 +139,31 @@
   color: white;
   text-decoration: none;
   font-weight: 600;
-  padding: 0.75rem 1.5rem;
+  padding: 0.8rem 1.5rem;
   border-radius: 6px;
-  display: inline-block; /* Para centralizar o botão */
-  transition: background-color 0.3s ease;
+  display: inline-block;
+  transition: all 0.3s ease;
 }
 
 .lattes-btn:hover {
-  background-color: #e69500; /* Laranja mais escuro */
-  color: white;
+  background-color: #e69500;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-/* Responsividade para o grid principal */
-@media (max-width: 992px) { /* Ponto de quebra para colunas */
+/* Responsividade */
+@media (max-width: 992px) {
   .about-content-grid {
-    flex-direction: column; /* Empilha as colunas */
-  }
-  .about-main-content,
-  .about-sidebar {
-    flex: none; /* Remove a flexibilidade */
-    width: 100%; /* Ocupa 100% da largura */
+    flex-direction: column;
   }
   .about-sidebar {
-    order: -1; /* Coloca o card do professor antes do texto em mobile */
-    margin-bottom: 2rem;
+    order: -1; /* Professor em cima no mobile */
+    margin-bottom: 1rem;
+  }
+  .professor-card {
+    position: static;
+  }
+  .about-page-title {
+    font-size: 2.2rem;
   }
 }

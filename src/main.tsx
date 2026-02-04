@@ -9,10 +9,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 // Caminhos para o Header
 import Header from './components/Header'; 
-import Home from './pages/Home';
+// import Home from './pages/Home';
 import About from './pages/About';
 import Research from './pages/Research';
-import Members from './pages/Members';
+import Members from './pages/Members';                                 
 import Publication from './pages/Publication';
 import Resources from './pages/Resources';
 import Footer from './components/Footer';

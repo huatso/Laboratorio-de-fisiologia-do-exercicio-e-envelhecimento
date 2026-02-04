@@ -1,51 +1,53 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import './Research.css';
-import ResearchesData, { ResearchProject } from '../data/Researches';
+
+const researchesData = [
+  {
+    id: 1,
+    title: "Comportamento cardiovascular ao exercício físico",
+    objective: "Investigar as respostas cardiovasculares e hemodinâmicas ao exercício físico agudo e crônico, considerando diferentes intensidades, frequências, durações, modalidades e condições fisiológicas, com vistas à compreensão dos mecanismos de regulação cardiovascular e às implicações para desempenho, saúde e segurança do exercício."
+  },
+  {
+    id: 2,
+    title: "Exercício físico e envelhecimento",
+    objective: "Analisar as respostas fisiológicas e fisiopatológicas agudas imediatas, agudas tardias e crônicas de pessoas idosas ao exercício físico, contemplando adaptações cardiovasculares, respiratórias, metabólicas e funcionais, bem como suas repercussões na capacidade funcional, fragilidade, autonomia e qualidade de vida durante o processo de envelhecimento."
+  },
+  {
+    id: 3,
+    title: "Doenças cardiovasculares e exercício físico",
+    objective: "Investigar o papel do exercício físico na prevenção primária e secundária, bem como no tratamento e reabilitação das doenças cardiovasculares, incluindo a análise de seus efeitos sobre fatores de risco, comorbidades associadas, parâmetros clínicos, funcionais e prognósticos, fundamentando intervenções baseadas em evidências."
+  }
+];
 
 function ResearchesPage() {
-    return (
-        <Container className="my-5 researches-container">
-            <h1 className="page-title text-center mb-5">Nossas Linhas de Pesquisa</h1>
+  return (
+    <Container className="my-5 researches-container">
+      <h1 className="page-title text-center mb-5">Linhas de Pesquisa</h1>
 
-            <div className="research-list-container">
-                {ResearchesData.map((line) => (
-                    // Container principal da linha de pesquisa
-                    <div key={line.Id} className="research-item-block">
-                        
-                        <Row>
-                            {/* Coluna Principal: Título, Descrição, Líder */}
-                            <Col md={8}>
-                                <h3 className="research-title-main">
-                                    {/* Icone em Ciano Claro para visual */}
-                                    <i className="bi bi-flask-fill me-2"></i> 
-                                    {line.Title}
-                                </h3>
-                                
-                                <p className="leader-info text-muted small mb-3">
-                                    Líder: <strong className="leader-name">{line.Lead}</strong>
-                                </p>
-                                
-                                <p className="research-description-text">{line.Description}</p>
-                            </Col>
-
-                            {/* Coluna de Projetos Atuais (Lista Simples) */}
-                            <Col md={4}>
-                                <h6 className="section-subtitle mt-4 mt-md-0">Projetos Atuais</h6>
-                                <ul className="project-list">
-                                    {line.Projects.map((project, idx) => (
-                                        <li key={idx} className="project-list-item">
-                                            <i className="bi bi-arrow-right-short me-2"></i> {project}
-                                        </li>
-                                    ))}
-                                </ul>
-                            </Col>
-                        </Row>
-                    </div>
-                ))}
-            </div>
-        </Container>
-    );
+      <div className="research-list-container">
+        {researchesData.map((line) => (
+          <div key={line.id} className="research-item-block">
+            <Row className="align-items-center">
+              <Col md={1} className="text-center d-none d-md-block">
+                <div className="research-number">{line.id}</div>
+              </Col>
+              <Col md={11}>
+                <h3 className="research-title-main">
+                  <i className="bi bi-activity me-2"></i> 
+                  {line.title}
+                </h3>
+                <div className="research-objective-box">
+                  <strong className="label-objetivo">Objetivo:</strong>
+                  <p className="research-description-text">{line.objective}</p>
+                </div>
+              </Col>
+            </Row>
+          </div>
+        ))}
+      </div>
+    </Container>
+  );
 }
 
 export default ResearchesPage;

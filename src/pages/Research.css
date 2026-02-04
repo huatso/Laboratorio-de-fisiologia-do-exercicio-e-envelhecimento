@@ -1,100 +1,82 @@
-/* Definição das variáveis no body (Substituindo :root) */
-body {
-    --primary-action-color: #0084A3;   /* Azul Petróleo */
-    --accent-visual-color: #00BFE8;    /* Ciano Claro */
-    --hover-dark: #006F85;             /* Tom mais escuro do Azul Petróleo */
-    --text-color-dark: #4F585C;        /* Cinza/Grafite */
-    --borda-suave: #e9ecef;
-    --fundo-bloco: #fcfcfc;            /* Fundo muito leve para os blocos */
-}
-
-/* Título principal (H1) */
+/* Título da Página */
 .page-title {
-    color: var(--text-color-dark);
-    font-weight: 700;
+  color: var(--cinza-escuro, #58626C);
+  font-weight: 700;
+  font-size: 2.5rem;
+  /* border-bottom: 3px solid var(--laranja-destaque, #FFA300); */
+  display: inline-block;
+  padding-bottom: 10px;
+  margin-bottom: 4rem !important;
+  width: 100%;
 }
 
-/* --- Estilos da Lista de Pesquisas --- */
-
+/* Bloco de cada linha de pesquisa */
 .research-item-block {
-    /* Fundo levemente off-white */
-    background-color: var(--fundo-bloco);
-    border: 1px solid var(--borda-suave);
-    border-radius: 6px;
-    
-    /* Barra lateral forte: a chave do design */
-    border-left: 6px solid var(--primary-action-color); 
-    
-    padding: 2rem;
-    margin-bottom: 2rem;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-    transition: all 0.3s ease;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 2rem;
+  margin-bottom: 2.5rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  border-left: 5px solid var(--azul-principal, #008399);
+  transition: transform 0.2s ease;
 }
 
 .research-item-block:hover {
-    /* Hover sutil: a cor da barra lateral escurece */
-    border-left-color: var(--hover-dark); 
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: translateX(5px);
 }
 
-/* Título Principal da Linha de Pesquisa (H3) */
+/* Número indicador ao lado */
+.research-number {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: rgba(0, 131, 153, 0.15); /* Azul principal com transparência */
+  line-height: 1;
+}
+
+/* Título da linha */
 .research-title-main {
-    color: var(--text-color-dark); /* Nome em Cinza/Grafite */
-    font-weight: 700;
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
+  color: var(--cinza-escuro, #58626C);
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
 }
 
 .research-title-main i {
-    color: var(--accent-visual-color); /* Ícone em Ciano Claro */
-    font-size: 1.6rem;
+  color: var(--azul-principal, #008399);
 }
 
-/* Informação do Líder */
-.leader-info {
-    font-size: 0.9rem;
-    /* Adicionado pequeno destaque para o Líder */
-    color: var(--primary-action-color) !important; 
-}
-.leader-name {
-    font-weight: 700;
+/* Caixa de Objetivo */
+.research-objective-box {
+  background-color: var(--fundo-claro, #f8f9fa);
+  padding: 1.2rem;
+  border-radius: 6px;
 }
 
-/* Descrição */
+.label-objetivo {
+  color: var(--laranja-destaque, #FFA300);
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
 .research-description-text {
-    line-height: 1.6;
-    color: #495057;
-    font-size: 1rem;
-    margin-top: 1rem;
+  color: #495057;
+  line-height: 1.7;
+  text-align: justify;
+  margin-bottom: 0;
 }
 
-/* --- Lista de Projetos (Coluna Lateral) --- */
-
-.section-subtitle {
-    color: var(--primary-action-color); /* Azul Petróleo */
-    font-weight: 700;
-    font-size: 1.1rem;
-    margin-bottom: 0.75rem;
-    /* Linha divisória simples */
-    border-bottom: 1px solid var(--borda-suave);
-    padding-bottom: 0.25rem;
-}
-
-.project-list {
-    list-style: none; /* Remove marcadores padrão */
-    padding-left: 0;
-    margin-bottom: 0;
-}
-
-.project-list-item {
-    font-size: 0.95rem;
-    line-height: 1.5;
-    margin-bottom: 0.4rem;
-    color: #495057;
-}
-
-.project-list-item i {
-    color: var(--accent-visual-color); /* Ciano Claro para marcadores de lista */
-    font-size: 1.1rem;
-    vertical-align: top;
+/* Responsividade */
+@media (max-width: 768px) {
+  .research-item-block {
+    padding: 1.5rem;
+  }
+  .research-title-main {
+    font-size: 1.3rem;
+  }
+  .page-title {
+    font-size: 2rem;
+  }
 }
