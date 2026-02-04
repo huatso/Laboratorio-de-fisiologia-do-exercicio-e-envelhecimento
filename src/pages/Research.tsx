@@ -29,17 +29,17 @@ function ResearchesPage() {
         {researchesData.map((line) => (
           <div key={line.id} className="research-item-block">
             <Row className="align-items-center">
-              <Col md={1} className="text-center d-none d-md-block">
-                <div className="research-number">{line.id}</div>
-              </Col>
-              <Col md={11}>
+              {/* Removida a coluna de numeração para eliminar a sensação de prioridade */}
+              <Col xs={12}>
                 <h3 className="research-title-main">
-                  <i className="bi bi-activity me-2"></i> 
+                  <i className="bi bi-flask me-2"></i> 
                   {line.title}
                 </h3>
                 <div className="research-objective-box">
-                  <strong className="label-objetivo">Objetivo:</strong>
-                  <p className="research-description-text">{line.objective}</p>
+                  <p className="research-description-text">
+                    <strong>Objetivo: </strong> 
+                    {line.objective}
+                  </p>
                 </div>
               </Col>
             </Row>

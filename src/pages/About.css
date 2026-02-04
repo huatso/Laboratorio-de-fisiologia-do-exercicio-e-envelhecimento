@@ -1,6 +1,4 @@
-/* Arquivo: src/pages/About.css */
-
-/* --- VARIÁVEIS DE CORES --- */
+/* --- VARIÁVEIS --- */
 :root {
   --azul-principal: #008399;
   --cinza-escuro: #58626C;
@@ -13,13 +11,12 @@
   width: 100%;
   margin: 0;
   padding: 0;
-  font-family: 'Segoe UI', Roboto, sans-serif;
 }
 
-/* --- HERO SECTION (VÍDEO) --- */
+/* --- HERO SECTION (AJUSTADA) --- */
 .hero-section {
   position: relative;
-  height: 100vh; /* Tela cheia */
+  height: 65vh; /* Altura reduzida para melhor proporção */
   width: 100%;
   display: flex;
   align-items: center;
@@ -33,13 +30,11 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
+  width: 100%;
+  height: 100%;
   z-index: -2;
   transform: translate(-50%, -50%);
-  object-fit: cover;
+  object-fit: cover; /* Mantém a proporção sem esticar */
 }
 
 .hero-overlay {
@@ -48,7 +43,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5); /* Escurece o vídeo para ler o texto */
+  background: rgba(0, 0, 0, 0.45);
   z-index: -1;
 }
 
@@ -58,37 +53,44 @@
 }
 
 .hero-title {
-  font-size: 5rem;
+  font-size: 4rem;
   font-weight: 800;
-  letter-spacing: 5px;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 .hero-subtitle {
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   font-weight: 400;
   margin-bottom: 0.5rem;
 }
 
 .hero-tagline {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-style: italic;
   opacity: 0.9;
 }
 
+/* SETA DE SCROLL */
 .scroll-indicator {
-  margin-top: 3rem;
-  font-size: 2rem;
+  margin-top: 2rem;
+  font-size: 2.5rem;
+  cursor: pointer;
+  display: inline-block;
+  transition: transform 0.3s ease;
   animation: bounce 2s infinite;
 }
 
-@keyframes bounce {
-  0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
-  40% {transform: translateY(-10px);}
-  60% {transform: translateY(-5px);}
+.scroll-indicator:hover {
+  transform: scale(1.2);
 }
 
-/* --- WRAPPER DO CONTEÚDO --- */
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-10px); }
+  60% { transform: translateY(-5px); }
+}
+
+/* --- CONTEÚDO --- */
 .content-wrapper {
   max-width: 1200px;
   margin: 0 auto;
@@ -103,25 +105,22 @@
   font-size: 2.8rem;
 }
 
-/* INTRODUÇÃO (JUMBOTRON) */
 .about-intro-section {
   background-color: var(--fundo-claro);
   padding: 2.5rem;
   border-radius: 8px;
   margin-bottom: 4rem;
   border-left: 6px solid var(--azul-principal);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
 .intro-lead {
-  font-size: 1.2rem;
+  font-size: 1.15rem;
   color: var(--cinza-escuro);
   line-height: 1.8;
   text-align: justify;
-  margin: 0;
 }
 
-/* GRID DE CONTEÚDO */
 .about-content-grid {
   display: flex;
   flex-wrap: wrap;
@@ -138,11 +137,10 @@
   min-width: 300px;
 }
 
-/* SEÇÕES E ÍCONES */
 .about-section-title {
   color: var(--cinza-escuro);
   font-weight: 600;
-  font-size: 1.8rem;
+  font-size: 1.7rem;
   margin-top: 2.5rem;
   margin-bottom: 1.2rem;
   display: flex;
@@ -150,30 +148,21 @@
 }
 
 .section-icon {
-  color: var(--azul-principal); /* Alterado para azul para combinar com a USP */
+  color: var(--azul-principal);
   margin-right: 0.8rem;
 }
 
 .about-text-content {
-  padding-left: 2.3rem;
+  padding-left: 2.2rem;
 }
 
-.about-text-content p {
+.about-text-content p, .about-text-content li {
   line-height: 1.7;
   color: #495057;
   text-align: justify;
 }
 
-.about-text-content ul {
-  padding-left: 1.2rem;
-}
-
-.about-text-content li {
-  margin-bottom: 0.8rem;
-  line-height: 1.6;
-}
-
-/* CARD DO PROFESSOR */
+/* CARD PROFESSOR */
 .professor-card {
   background-color: var(--branco);
   border: 1px solid #eee;
@@ -195,23 +184,13 @@
 .professor-name {
   color: var(--cinza-escuro);
   font-weight: 700;
-  font-size: 1.4rem;
-  margin-bottom: 0.5rem;
+  font-size: 1.3rem;
 }
 
 .professor-role {
   color: var(--laranja-destaque);
   font-weight: 600;
-  font-size: 0.95rem;
   margin-bottom: 1rem;
-}
-
-.professor-description {
-  font-size: 0.9rem;
-  color: #6c757d;
-  line-height: 1.6;
-  text-align: justify;
-  margin-bottom: 1.5rem;
 }
 
 .lattes-btn {
@@ -222,26 +201,17 @@
   padding: 0.8rem 1.5rem;
   border-radius: 6px;
   display: inline-block;
-  transition: all 0.3s ease;
 }
 
 .lattes-btn:hover {
   background-color: #e69500;
-  transform: translateY(-2px);
   color: var(--branco);
 }
 
 /* RESPONSIVIDADE */
 @media (max-width: 992px) {
-  .hero-title { font-size: 3.5rem; }
-  .hero-subtitle { font-size: 1.4rem; }
-  
-  .about-content-grid {
-    flex-direction: column;
-  }
-  
-  .about-sidebar {
-    order: -1; /* Professor aparece antes do texto no mobile */
-    margin-bottom: 2rem;
-  }
+  .hero-section { height: 50vh; }
+  .hero-title { font-size: 2.8rem; }
+  .about-content-grid { flex-direction: column; }
+  .about-sidebar { order: -1; }
 }

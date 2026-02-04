@@ -3,42 +3,33 @@
   color: var(--cinza-escuro, #58626C);
   font-weight: 700;
   font-size: 2.5rem;
-  /* border-bottom: 3px solid var(--laranja-destaque, #FFA300); */
-  display: inline-block;
-  padding-bottom: 10px;
   margin-bottom: 4rem !important;
-  width: 100%;
+  text-align: center;
 }
 
 /* Bloco de cada linha de pesquisa */
 .research-item-block {
   background-color: #fff;
   border-radius: 10px;
-  padding: 2rem;
-  margin-bottom: 2.5rem;
+  padding: 2.5rem;
+  margin-bottom: 2rem;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-  border-left: 5px solid var(--azul-principal, #008399);
+  border-left: 6px solid var(--azul-principal, #008399); /* Destaque lateral em azul */
   transition: transform 0.2s ease;
 }
 
 .research-item-block:hover {
-  transform: translateX(5px);
-}
-
-/* Número indicador ao lado */
-.research-number {
-  font-size: 2.5rem;
-  font-weight: 800;
-  color: rgba(0, 131, 153, 0.15); /* Azul principal com transparência */
-  line-height: 1;
+  transform: translateY(-5px);
 }
 
 /* Título da linha */
 .research-title-main {
   color: var(--cinza-escuro, #58626C);
-  font-size: 1.6rem;
+  font-size: 1.7rem;
   font-weight: 600;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
 }
 
 .research-title-main i {
@@ -48,24 +39,22 @@
 /* Caixa de Objetivo */
 .research-objective-box {
   background-color: var(--fundo-claro, #f8f9fa);
-  padding: 1.2rem;
-  border-radius: 6px;
-}
-
-.label-objetivo {
-  color: var(--laranja-destaque, #FFA300);
-  text-transform: uppercase;
-  font-size: 0.85rem;
-  letter-spacing: 1px;
-  display: block;
-  margin-bottom: 0.5rem;
+  padding: 1.5rem;
+  border-radius: 8px;
 }
 
 .research-description-text {
   color: #495057;
-  line-height: 1.7;
+  line-height: 1.8;
   text-align: justify;
   margin-bottom: 0;
+}
+
+.research-description-text strong {
+  color: var(--azul-principal, #008399);
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  margin-right: 5px;
 }
 
 /* Responsividade */
@@ -74,9 +63,6 @@
     padding: 1.5rem;
   }
   .research-title-main {
-    font-size: 1.3rem;
-  }
-  .page-title {
-    font-size: 2rem;
+    font-size: 1.4rem;
   }
 }
