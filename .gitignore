@@ -25,3 +25,10 @@ dist-ssr
 
 # Ignore package manifest if you want to keep it local
 package.json
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+.env*
+!.env.example
