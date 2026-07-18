@@ -1,0 +1,215 @@
+/* Paleta reaproveitada do site (ver src/components/Header.css) */
+:root {
+  --admin-azul: #008399;
+  --admin-azul-escuro: #00596b;
+  --admin-laranja: #FFA300;
+  --admin-cinza: #58626C;
+  --admin-cinza-claro: #f4f6f7;
+  --admin-branco: #FFFFFF;
+}
+
+.admin-layout {
+  min-height: 100vh;
+  background: var(--admin-cinza-claro);
+  font-family: Arial, sans-serif;
+}
+
+/* ---- Sidebar ---- */
+.admin-sidebar {
+  width: 240px;
+  flex-shrink: 0;
+  background: linear-gradient(180deg, var(--admin-azul) 0%, var(--admin-azul-escuro) 100%);
+  color: #fff;
+  padding: 24px 16px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.12);
+}
+
+.admin-sidebar-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 28px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid var(--admin-laranja);
+}
+
+.admin-sidebar-logo {
+  height: 36px;
+  width: 36px;
+  object-fit: contain;
+  background: #fff;
+  border-radius: 8px;
+  padding: 3px;
+}
+
+.admin-sidebar-title {
+  color: #fff;
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.admin-sidebar .nav-link {
+  color: rgba(255, 255, 255, 0.8);
+  padding: 10px 14px;
+  border-radius: 8px;
+  margin-bottom: 4px;
+  font-weight: 500;
+  border-left: 3px solid transparent;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.admin-sidebar .nav-link.active,
+.admin-sidebar .nav-link:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+}
+
+.admin-sidebar .nav-link.active {
+  border-left-color: var(--admin-laranja);
+  font-weight: 700;
+}
+
+.admin-sidebar-logout {
+  border-color: rgba(255, 255, 255, 0.4) !important;
+  color: #fff !important;
+}
+
+.admin-sidebar-logout:hover {
+  background: rgba(220, 53, 69, 0.85) !important;
+  border-color: rgba(220, 53, 69, 0.85) !important;
+}
+
+/* ---- Área de conteúdo ---- */
+.admin-content {
+  background: var(--admin-cinza-claro);
+  min-height: 100vh;
+}
+
+.admin-content h2 {
+  color: var(--admin-cinza);
+  font-weight: 700;
+}
+
+/* Cartões */
+.admin-layout .card {
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+}
+
+/* Botões primários alinhados com a cor principal do site.
+   !important necessário pois Resources.css/Publication.css definem
+   .btn-primary global com !important (vazam para fora dessas páginas). */
+.admin-layout .btn-primary {
+  background-color: var(--admin-azul) !important;
+  border-color: var(--admin-azul) !important;
+}
+
+.admin-layout .btn-primary:hover,
+.admin-layout .btn-primary:focus,
+.admin-layout .btn-primary:active {
+  background-color: var(--admin-azul-escuro) !important;
+  border-color: var(--admin-azul-escuro) !important;
+}
+
+.admin-layout .btn-primary:focus,
+.admin-layout .btn-check:focus + .btn-primary,
+.admin-layout .btn-primary:focus-visible {
+  box-shadow: 0 0 0 0.2rem rgba(0, 131, 153, 0.35);
+}
+
+.admin-layout .btn-outline-secondary {
+  color: var(--admin-cinza) !important;
+  border-color: var(--admin-cinza) !important;
+}
+
+.admin-layout .btn-outline-secondary:hover {
+  background-color: var(--admin-cinza) !important;
+  border-color: var(--admin-cinza) !important;
+}
+
+/* Tabelas */
+.admin-layout .table thead th {
+  background-color: rgba(0, 131, 153, 0.08);
+  color: var(--admin-cinza);
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  border-bottom: 2px solid rgba(0, 131, 153, 0.2);
+}
+
+/* Modais */
+.admin-layout .modal-header {
+  border-bottom: 2px solid var(--admin-azul);
+}
+
+.admin-layout .modal-title {
+  color: var(--admin-cinza);
+  font-weight: 700;
+}
+
+/* Login / Registro */
+.admin-login-wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--admin-azul) 0%, var(--admin-cinza) 100%);
+  font-family: Arial, sans-serif;
+}
+
+.admin-login-wrapper .card {
+  border: none;
+  border-top: 4px solid var(--admin-laranja);
+  border-radius: 12px;
+}
+
+.admin-login-logo {
+  display: block;
+  height: 56px;
+  margin: 0 auto 12px;
+}
+
+.admin-login-wrapper h4 {
+  color: var(--admin-cinza);
+  font-weight: 700;
+}
+
+.admin-login-wrapper .btn-primary {
+  background-color: var(--admin-azul) !important;
+  border-color: var(--admin-azul) !important;
+}
+
+.admin-login-wrapper .btn-primary:hover,
+.admin-login-wrapper .btn-primary:focus,
+.admin-login-wrapper .btn-primary:active {
+  background-color: var(--admin-azul-escuro) !important;
+  border-color: var(--admin-azul-escuro) !important;
+}
+
+.admin-login-wrapper a {
+  color: var(--admin-azul);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.admin-login-wrapper a:hover {
+  color: var(--admin-laranja);
+}
+
+/* Barra de armazenamento */
+.storage-bar-track {
+  height: 10px;
+  border-radius: 5px;
+  background: #e5e7eb;
+  overflow: hidden;
+}
+
+.storage-bar-fill {
+  height: 100%;
+  background: var(--admin-azul);
+}

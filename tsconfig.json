@@ -22,7 +22,10 @@
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+
+    /* Vite (esbuild) faz a transpilação de verdade — tsc aqui é só type-check */
+    "noEmit": true
   },
 
   /* Inclui todos os arquivos TypeScript da pasta src */
